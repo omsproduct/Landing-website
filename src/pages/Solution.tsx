@@ -64,7 +64,7 @@ const Solution = () => {
                   <div className="text-[#5E4DE1] text-base flex items-center justify-center">{item.content}</div>
                 </div>
                 <div className="flex items-start px-4 py-2 justify-center gap-1">
-                  <img src="/Frame 2147223785.svg" alt="check-fill" className="mt-0.5 shrink-0" />
+                  <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/Frame_2147223785_euoi5r.svg" alt="check-fill" className="mt-0.5 shrink-0" />
                   <p className="text-sm text-[#818181]">{item.description}</p>
                 </div>
               </div>

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
       <div className="flex items-center justify-between w-117.25 h-[61.46px] drop-shadow-[0_8px_24px_rgba(0,0,0,0.15)] p-3 mt-6 ml-25 rounded-md bg-white">
         <NavLink to={"/"} className="cursor-pointer">
 
-          <img src="/Group 6357568.svg" alt="logo" />
+          <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg" alt="logo" />
         </NavLink>
 
         <div className="flex gap-10 text-black font-medium text-base px-3">
@@ -26,14 +26,6 @@ const Header: React.FC = () => {
           }>
             Pricing
           </NavLink>
-          {/* <div
-            className="relative cursor-pointer group"
-            onClick={() => navigate("/pricing")}
-          >
-            <div className="relative z-10 px-2 py-1 transition-all duration-300 hover:text-[#5E4DE1]">
-              Pricing
-            </div>
-          </div> */}
 
           {/* Info & More */}
           <NavLink to={"/information"} className={({ isActive }) =>
@@ -45,21 +37,13 @@ const Header: React.FC = () => {
           >
             Info & More
           </NavLink>
-          {/* <div
-            className="relative cursor-pointer group"
-            onClick={() => navigate("/information")}
-          >
-            <div className="relative z-10 px-2 py-1 transition-all duration-300 hover:text-[#5E4DE1] flex items-center active:text-[#5E4DE1]">
-              Info & More
-            </div>
-          </div> */}
         </div>
       </div>
 
       {/* Logout */}
       <div className="mr-25 mt-7 flex items-center gap-3 font-medium group/logout cursor-pointer">
         <img
-          src="/Frame 6357480.svg"
+          src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185803/Frame_6357480_ij0tys.svg"
           alt="Logo-out"
           className="transition-transform duration-300 group-hover/logout:scale-110"
         />

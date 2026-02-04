@@ -1,19 +1,20 @@
 // src/pages/Pricing.tsx
+import Footer from '../Footer'
 import Header from '../Header'
+import ChangesFor from './ChangesFor'
+import InputDetails from './InputDetails'
+import TheChanges from './TheChanges'
 
 const Pricing = () => {
   return (
     <>
       <Header />
-      <div id='info-section' className="min-h-screen">
-        <div className="max-w-4xl mx-auto mt-20 p-8">
-          <h1 className="text-4xl font-bold text-[#543ED2] mb-6">Pricing</h1>
-          <p className="text-lg text-gray-700">
-            This is the information page with more details about our services.
-          </p>
-          {/* Add your info content here */}
-        </div>
+      <div id='info-section' className="min-h-screen max-w-7xl mx-57 mt-20 flex flex-col items-center">
+        <InputDetails/>
+        <TheChanges/>
+        <ChangesFor/>
       </div>
+      <Footer/>
     </>
   )
 }

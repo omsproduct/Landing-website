@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react"
 
 const users = [
     {
-        image: '/public/d948ed205b1a93e15c6683609d9debe4cfb43a10.png',
+        image: '/d948ed205b1a93e15c6683609d9debe4cfb43a10.png',
         name: 'Samantha Payne',
         bg: '#E17C7C',
         role: 'Director, Barminhum Collegiate School',
@@ -12,7 +12,7 @@ const users = [
         date: 'March 15, 2023',
     },
     {
-        image: '/public/1010377820c465d59f118b3022e7100e00446f49.png',
+        image: '/1010377820c465d59f118b3022e7100e00446f49.png',
         name: 'John Smith',
         bg: '#FFBB00',
         role: 'Principal, Lincoln High School',
@@ -21,7 +21,7 @@ const users = [
         date: 'April 2, 2023',
     },
     {
-        image: '/public/12f6b0769df1bcb43c092cd6552df97adb0f0b97.png',
+        image: '/12f6b0769df1bcb43c092cd6552df97adb0f0b97.png',
         name: 'Maria Rodriguez',
         bg: '#FF4DD9',
         role: 'Administrator, Westwood Academy',
@@ -30,7 +30,7 @@ const users = [
         date: 'May 10, 2023',
     },
     {
-        image: '/public/02cd84bac0f534c0b23911ecff209c273ae4e828.png',
+        image: '/02cd84bac0f534c0b23911ecff209c273ae4e828.png',
         name: 'David Chen',
         bg: '#4CAF50',
         role: 'Superintendent, City School District',
@@ -39,7 +39,7 @@ const users = [
         date: 'June 5, 2023',
     },
     {
-        image: '/public/c356698141550d9ee30cbfb5612da8155a5e0b6c.png',
+        image: '/c356698141550d9ee30cbfb5612da8155a5e0b6c.png',
         name: 'Emma Wilson',
         bg: '#2196F3',
         role: 'Dean, Roosevelt College',
@@ -53,8 +53,6 @@ const UserSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isAnimating, setIsAnimating] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
-
-    
 
     // Get the 3 users to display based on current index
     const getVisibleUsers = () => {
@@ -71,7 +69,7 @@ const UserSection = () => {
         const scrollInterval = setInterval(() => {
             setIsAnimating(true)
             setCurrentIndex((prev) => (prev + 1) % users.length)
-
+            
             // Reset animation state after transition
             setTimeout(() => setIsAnimating(false), 500)
         }, 3000) // Change every 3 seconds
@@ -86,17 +84,17 @@ const UserSection = () => {
         const hasHalfStar = rating % 1 >= 0.5
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<StarFill key={`full-${i}`} className="text-[#FF9D00]" />)
+            stars.push(<StarFill key={`full-${i}`} className="text-[#FF9D00] w-4 h-4" />)
         }
 
         if (hasHalfStar) {
-            stars.push(<StarHalf key="half" className="text-[#FF9D00]" />)
+            stars.push(<StarHalf key="half" className="text-[#FF9D00] w-4 h-4" />)
         }
 
         // Fill remaining stars up to 5
         const remainingStars = 5 - stars.length
         for (let i = 0; i < remainingStars; i++) {
-            stars.push(<StarFill key={`empty-${i}`} className="text-gray-300" />)
+            stars.push(<StarFill key={`empty-${i}`} className="text-gray-300 w-4 h-4" />)
         }
 
         return stars
@@ -105,34 +103,43 @@ const UserSection = () => {
     const visibleUsers = getVisibleUsers()
 
     return (
-        <div className="py-8 md:py-12">
+        <div className="py-8 md:py-12 px-4">
             <div className="max-w-7xl mx-auto">
-
-                <h2 className="text-3xl font-semibold mb-1.5">Voice Matters</h2>
-                <h2 className="text-xl md:text-2xl font-bold mb-8 text-[#5E4DE1]">
-                    What Our Partner
-                    <div>Says About <img src="/public/Group 6357568.svg" alt="logo" className="inline-block h-6" /></div>
-                </h2>
+                <div className="mb-8">
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-2">Voice Matters</h2>
+                    <div className="text-xl md:text-2xl font-bold text-[#5E4DE1]">
+                        What Our Partner Says About 
+                        <img 
+                            src="/Group 6357568.svg" 
+                            alt="logo" 
+                            className="inline-block h-6 md:h-8 ml-2"
+                        />
+                    </div>
+                </div>
 
                 <div className="relative">
-
                     {/* User Cards Container */}
                     <div
                         ref={containerRef}
-                        className="flex items-stretch gap-4 transition-all duration-500 ease-in-out"
+                        className={`
+                            grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 
+                            transition-all duration-500 ease-in-out
+                            ${isAnimating ? 'opacity-90' : 'opacity-100'}
+                        `}
                     >
                         {visibleUsers.map((user, idx) => (
                             <div
                                 key={`${user.name}-${idx}`}
                                 className={`
-                                    flex-1 min-w-0 px-5 py-6 border border-[#5E4DE1] rounded-4xl 
-                                    bg-white
-                                    ${idx === 1 ? 'scale-100 z-10' : 'opacity-90 scale-95'}
+                                    px-5 py-6 border border-[#5E4DE1] rounded-4xl 
+                                    bg-white transition-all duration-300
+                                    ${idx === 1 ? 'scale-100 z-10 shadow-lg' : 'scale-95 opacity-90'}
+                                    hover:shadow-xl hover:scale-[1.02]
                                 `}
                             >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div
-                                        className='w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center overflow-hidden'
+                                        className='w-12 h-12 md:w-14 md:h-14 rounded-full flex-shrink-0 overflow-hidden border-2 border-white shadow-md'
                                         style={{ backgroundColor: user.bg }}
                                     >
                                         <img
@@ -146,33 +153,44 @@ const UserSection = () => {
                                         <p className="text-xs md:text-sm text-[#5E4DE1] truncate">{user.role}</p>
                                         <div className="flex items-center gap-1 mt-1">
                                             {renderStars(user.rating)}
+                                            <span className="text-xs text-gray-500 ml-1">
+                                                ({user.rating})
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed mb-2">
+                                <div className="mb-3">
+                                    <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">
                                         {user.review}
                                     </p>
                                 </div>
-                                <div className="text-black font-semibold text-sm flex gap-1 mb-3.5">show more <img src="/public/Icons.svg" alt="down-arrow" /></div>
-                                <div className="text-xs text-[#5E4DE1]">{user.date}</div>
+                                <div className="flex items-center justify-between">
+                                    <div className="text-xs text-[#5E4DE1] font-medium">{user.date}</div>
+                                    <button className="flex items-center gap-1 text-black font-semibold text-sm hover:text-[#5E4DE1] transition-colors">
+                                        show more 
+                                        <img 
+                                            src="/Icons.svg" 
+                                            alt="down-arrow" 
+                                            className="w-4 h-4"
+                                        />
+                                    </button>
+                                </div>
                             </div>
                         ))}
                     </div>
-                    {/* <div className="absolute -right-117 -top-30">
-                        <div className="relative">
 
-                            <div className="w-[474px] h-[474px] bg-[#5E4DE1] flex items-center justify-center rounded-l-full" style={{
-                                clipPath: 'inset(0 55% 0 0)' // This cuts off the right half
-                            }}><div className="w-[414px] h-[414px] bg-[#352C7A] rounded-l-full"></div>
-                            </div>
-                            <div className="z-50 absolute h-12 w-full rounded-l-full bg-white flex items-center top-1/2 -translate-y-1/2 cursor-pointer ">
-                                <div className="ml-2 rounded-full h-9 w-9 bg-[#E17C7C] flex gap-2"><img src="/public/d948ed205b1a93e15c6683609d9debe4cfb43a10.png" alt="user" className="object-contain rounded-full" /><div className="text-[#5E4DE1] text-sm">Samantha
-                                    Payne</div></div>
-                            </div>
-                        </div>
-
-                    </div> */}
+                    {/* Dots indicator for mobile */}
+                    <div className="flex justify-center gap-2 mt-6 md:hidden">
+                        {users.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setCurrentIndex(idx)}
+                                className={`w-2 h-2 rounded-full transition-all ${
+                                    idx === currentIndex ? 'bg-[#5E4DE1] w-6' : 'bg-gray-300'
+                                }`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

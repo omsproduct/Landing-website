@@ -92,7 +92,7 @@ const ChooseSmarter = () => {
                 {/* Table Header */}
                 <div className="grid grid-cols-[1fr_1fr_1fr] gap-x-36 items-center mt-20">
                     <img
-                        src="/src/assets/Group 427321019.svg"
+                        src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185818/Group_427321019_t8eatc.svg"
                         alt=""
                         className="justify-self-start"
                     />

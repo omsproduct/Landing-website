@@ -58,6 +58,7 @@ const Gain = () => {
 
                             </div>
                         ))}
+                        {/* Divider lines */}
                         <div className="absolute top-27 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                         <div className="absolute bottom-58 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                         <div className="absolute -top-4 left-97 w-0.5 h-full bg-linear-to-b from-transparent via-[#5E4DE1] to-transparent" />
@@ -65,7 +66,7 @@ const Gain = () => {
                         <div className="absolute -top-15 right-0 w-[284.84px] h-[219.59px] relative">
                             {/* Image */}
                             <img
-                                src="/Group 6357568.svg"
+                                src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
                                 alt="logo"
                                 className="w-full h-full object-contain"
                             />
@@ -83,7 +84,7 @@ const Gain = () => {
                     {/* RIGHT IMAGE */}
                     <div className="flex w-full justify-start items-start">
                         <img
-                            src="/src/assets/Vector 435 (1).svg"
+                            src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185821/Vector_435_1_zugvh5.svg"
                             alt="illustration"
                             className="w-full max-h-125 object-contain" 
                         />
