@@ -21,29 +21,44 @@ const Hero = () => {
                         </h1>
 
                         <div className="flex gap-5 justify-center items-center">
-                            <Button
-                                className="
-                                   relative h-10 w-38 bg-[#543ED2] text-base rounded-sm text-white
-                                    border-2 border-transparent
-                                    overflow-hidden
-                                    hover:bg-[#543ED2]/90
-                                    hover:shadow-[4px_4px_10px_rgba(84,62,210,0.5)]
-                                    
-                                    transition-all duration-300
-                                    cursor-pointer
-                    "
-                            >
-                                Log in
-                            </Button>
+                           <Button
+  className="
+    relative h-10 w-38 px-6
+    bg-[#543ED2] text-white text-base rounded-sm
+    border border-white/20
+    overflow-hidden
+    backdrop-blur-md
+
+    transition-all duration-300 ease-out
+    cursor-pointer
+
+    hover:shadow-[0_12px_35px_rgba(84,62,210,0.55)]
+
+    after:absolute after:top-0 after:-left-2/3
+    after:w-1/2 after:h-full
+    after:bg-white/20
+    after:skew-x-[-20deg]
+    after:transition-all after:duration-500
+    hover:after:left-[120%]
+    hover:bg-[#543ED2]
+  "
+>
+  Log in
+</Button>
+
 
                             <Button
                                 className="
                                     relative h-10 w-38 bg-[#543ED2] text-base rounded-sm text-white
                                     border-2 border-transparent
                                     overflow-hidden
-                                    hover:bg-[#543ED2]/90
-                                    hover:shadow-[4px_4px_10px_rgba(84,62,210,0.5)]
-                                    transition-all duration-300
+                                    before:absolute before:inset-0
+                                    before:-translate-x-full before:bg-linear-to-r
+                                    before:from-transparent before:via-[#543ED2]/30 before:to-transparent
+                                    before:transition-transform before:duration-500
+                                    hover:before:translate-x-full
+                                    hover:bg-white hover:text-[#543ED2] hover:font-semibold hover:border-[#543ED2]
+                                    transition-all duration-500
                                     cursor-pointer
                                     
                                 "
@@ -63,50 +78,49 @@ const Hero = () => {
                         {/* Left Image Stack */}
                         <div className="relative w-52 h-80">
                             {/* Botom Image - Dashboard */}
-                            <div className="absolute top-7 -left-6 w-48 h-100 bg-white rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            <div className="absolute top-7 -left-6 w-48 h-full bg-white rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
-                                    src="/src/assets/Salary.png"
+                                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275598/Campus_uykgug.png"
                                     alt="dashboard1"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                             {/* Top Image - Campus */}
-                            <div className="absolute top-0 -right-7 w-48 h-100 bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            <div className="absolute top-0 -right-7 w-48 h-full bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
-                                    src="/src/assets/Dashboard (2).png"
+                                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275644/Dashboard_1_nexpdr.png"
                                     alt="campus"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                         </div>
 
                         {/* Center Main Image */}
-                        <div className="relative z-50 w-145 h-100 top-5 bg-white rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                        <div className="relative z-50 w-[600px] h-[387px] top-5 bg-transparent rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                             <img
-                                src="/src/assets/Academic_dashboard.png"
+                                src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275559/Academic_dashboard_iz4bkt.png"
                                 alt="academic dashboard"
-                                className="w-full h-full object-contain"
+                                className="absolute inset-0 w-full h-full object-cover rounded-tl-4xl rounded-tr-4xl"
                             />
-                            {/* Optional decorative border */}
-                            <div className="absolute inset-0 border-2 border-white/20 rounded-xl pointer-events-none"></div>
                         </div>
+
 
                         {/* Right Image Stack */}
                         <div className="relative w-52 h-80">
-                            {/* Top Image - Dashboard 2 */}
-                            <div className="absolute top-7 -right-6 w-48 h-100 bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            {/* bottom Image - Dashboard 2 */}
+                            <div className="absolute top-7 -right-6 w-48 h-full bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
-                                    src="/src/assets/Dashboard (2).png"
+                                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275645/Salary_ud4xje.png"
                                     alt="dashboard2"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
-                            {/* Bottom Image - Salary */}
-                            <div className="absolute top-0 right-11 w-48 h-100 bg-white rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            {/* tom Image - Salary */}
+                            <div className="absolute top-0 right-11 w-48 h-full bg-white rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
-                                    src="/src/assets/Salary.png"
+                                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275646/Dashboard_2_ltdzyx.png"
                                     alt="salary"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                         </div>

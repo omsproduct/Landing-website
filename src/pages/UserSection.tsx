@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react"
 
 const users = [
     {
-        image: '/d948ed205b1a93e15c6683609d9debe4cfb43a10.png',
+        image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/c356698141550d9ee30cbfb5612da8155a5e0b6c_t4zinm.png',
         name: 'Samantha Payne',
         bg: '#E17C7C',
         role: 'Director, Barminhum Collegiate School',
@@ -12,7 +12,7 @@ const users = [
         date: 'March 15, 2023',
     },
     {
-        image: '/1010377820c465d59f118b3022e7100e00446f49.png',
+        image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/d948ed205b1a93e15c6683609d9debe4cfb43a10_neqppz.png',
         name: 'John Smith',
         bg: '#FFBB00',
         role: 'Principal, Lincoln High School',
@@ -21,7 +21,7 @@ const users = [
         date: 'April 2, 2023',
     },
     {
-        image: '/12f6b0769df1bcb43c092cd6552df97adb0f0b97.png',
+        image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/02cd84bac0f534c0b23911ecff209c273ae4e828_xzbske.png',
         name: 'Maria Rodriguez',
         bg: '#FF4DD9',
         role: 'Administrator, Westwood Academy',
@@ -30,7 +30,7 @@ const users = [
         date: 'May 10, 2023',
     },
     {
-        image: '/02cd84bac0f534c0b23911ecff209c273ae4e828.png',
+        image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/12f6b0769df1bcb43c092cd6552df97adb0f0b97_i5bpv6.png',
         name: 'David Chen',
         bg: '#4CAF50',
         role: 'Superintendent, City School District',
@@ -39,7 +39,7 @@ const users = [
         date: 'June 5, 2023',
     },
     {
-        image: '/c356698141550d9ee30cbfb5612da8155a5e0b6c.png',
+        image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185804/1010377820c465d59f118b3022e7100e00446f49_qecu44.png',
         name: 'Emma Wilson',
         bg: '#2196F3',
         role: 'Dean, Roosevelt College',
@@ -110,7 +110,7 @@ const UserSection = () => {
                     <div className="text-xl md:text-2xl font-bold text-[#5E4DE1]">
                         What Our Partner Says About 
                         <img 
-                            src="/Group 6357568.svg" 
+                            src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg" 
                             alt="logo" 
                             className="inline-block h-6 md:h-8 ml-2"
                         />

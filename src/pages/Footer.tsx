@@ -10,7 +10,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white mb-8 px-38 mt-30">
+    <footer className="w-full bg-white mb-8 px-38 mt-40">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Top Section */}
