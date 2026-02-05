@@ -1,6 +1,6 @@
 import { StarFill, StarHalf } from "react-bootstrap-icons"
 import { useEffect, useState, useRef } from "react"
-
+import {ChevronDown } from "lucide-react"
 const users = [
     {
         image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/c356698141550d9ee30cbfb5612da8155a5e0b6c_t4zinm.png',
@@ -133,13 +133,13 @@ const UserSection = () => {
                                 className={`
                                     px-5 py-6 border border-[#5E4DE1] rounded-4xl 
                                     bg-white transition-all duration-300
-                                    ${idx === 1 ? 'scale-100 z-10 shadow-lg' : 'scale-95 opacity-90'}
-                                    hover:shadow-xl hover:scale-[1.02]
+                                    ${idx === 1 ? 'scale-100 z-10 shadow-md' : 'scale-95 opacity-90'}
+                                    hover:shadow-[0_12px_35px_rgba(84,62,210,0.2)]
                                 `}
                             >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div
-                                        className='w-12 h-12 md:w-14 md:h-14 rounded-full flex-shrink-0 overflow-hidden border-2 border-white shadow-md'
+                                        className='w-12 h-12 md:w-14 md:h-14 rounded-full shrink-0 overflow-hidden border-2 border-white shadow-md'
                                         style={{ backgroundColor: user.bg }}
                                     >
                                         <img
@@ -160,20 +160,16 @@ const UserSection = () => {
                                     </div>
                                 </div>
                                 <div className="mb-3">
-                                    <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">
+                                    <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
                                         {user.review}
                                     </p>
                                 </div>
-                                <div className="flex items-center justify-between">
-                                    <div className="text-xs text-[#5E4DE1] font-medium">{user.date}</div>
+                                <div className="space-y-3.5">
                                     <button className="flex items-center gap-1 text-black font-semibold text-sm hover:text-[#5E4DE1] transition-colors">
                                         show more 
-                                        <img 
-                                            src="/Icons.svg" 
-                                            alt="down-arrow" 
-                                            className="w-4 h-4"
-                                        />
+                                        <ChevronDown/>
                                     </button>
+                                    <div className="text-xs text-[#5E4DE1] font-medium">{user.date}</div>
                                 </div>
                             </div>
                         ))}

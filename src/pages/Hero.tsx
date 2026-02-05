@@ -96,7 +96,7 @@ const Hero = () => {
                         </div>
 
                         {/* Center Main Image */}
-                        <div className="relative z-50 w-[600px] h-[387px] top-5 bg-transparent rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                        <div className="relative z-50 w-150 h-96.75 top-5 bg-transparent rounded-tl-4xl rounded-tr-4xl overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                             <img
                                 src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275559/Academic_dashboard_iz4bkt.png"
                                 alt="academic dashboard"
