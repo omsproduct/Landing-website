@@ -21,11 +21,19 @@ const Feedback = () => {
                         <span
                             key={index}
                             className="
-                                px-4 py-2.5 rounded-full bg-[#5E4DE1] text-white text-sm font-medium whitespace-nowrap shadow-sm before:absolute before:inset-0 before:-translate-x-full before:bg-linear-to-r before:from-transparent before:via-white/30 before:to-transparent before:transition-transform before:duration-700 hover:before:translate-x-full hover:bg-[#543ED2] hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer
+                                px-4 py-2.5 rounded-full bg-[#5E4DE1] text-white text-sm font-medium whitespace-nowrap shadow-sm hover:bg-[#543ED2] transition-colors duration-300 cursor-pointer
                                 "
                         >
                             {label}
                         </span>
+                        // <span
+                        //     key={index}
+                        //     className="
+                        //         px-4 py-2.5 rounded-full bg-[#5E4DE1] text-white text-sm font-medium whitespace-nowrap shadow-sm before:absolute before:inset-0 before:-translate-x-full before:bg-linear-to-r before:from-transparent before:via-white/30 before:to-transparent before:transition-transform before:duration-700 hover:before:translate-x-full hover:bg-[#543ED2] hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer
+                        //         "
+                        // >
+                        //     {label}
+                        // </span>
                     ))}
                 </div>
             </div>

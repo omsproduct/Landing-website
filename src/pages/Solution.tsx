@@ -74,7 +74,7 @@ const Solution = () => {
           <div className="absolute top-0 bottom-0 right-90.25  border-r border-dashed border-[#5E4DE1]"></div>
           <div className="absolute top-0 bottom-0 right-107.75  border-r border-dashed border-[#5E4DE1]"></div>
 
-          <div className="grid grid-cols-3 gap-14">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-14">
             {solutionData.map((item) => (
               <div key={item.id} className="w-82 h-42 border border-[#5E4DE1] rounded-xl z-10">
                 <div className="flex gap-4 bg-[#E4E0FF] w-full h-22.25 rounded-t-xl">
@@ -88,7 +88,6 @@ const Solution = () => {
                   <p className="text-sm text-[#818181]">{item.description}</p>
                 </div>
               </div>
-
             ))}
           </div>
           

@@ -1,6 +1,6 @@
 const ChangesFor = () => {
     return (
-        <div className="mt-18 flex flex-col items-center mb-20">
+        <div className="mt-18 flex flex-col items-center">
             <h1 className="text-3xl font-semibold text-black mb-14"><span className='text-[#5E4DE1]'>Changes&nbsp;</span>For...</h1>
             <div className='relative'>
                 <div className='grid grid-cols-2 gap-12 text-base font-medium text-[#818181]'>

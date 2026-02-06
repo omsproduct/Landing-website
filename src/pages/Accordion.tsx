@@ -7,48 +7,46 @@ interface FAQItem {
   readonly answer: string;
 }
 
+const faqItems: readonly FAQItem[] = [
+  {
+    id: 1,
+    question: "Is this a cloud-based software?",
+    answer:
+      "Yes, this is a fully cloud-based platform. You can access it from anywhere using a modern web browser without installing any additional software.",
+  },
+  {
+    id: 2,
+    question: "Do I need any technical knowledge to use this?",
+    answer:
+      "No technical expertise is required. The interface is designed to be user-friendly, allowing anyone to get started with minimal guidance.",
+  },
+  {
+    id: 3,
+    question: "Is my data secure on the platform?",
+    answer:
+      "Absolutely. We use industry-standard security practices including encryption, secure authentication, and regular backups to protect your data.",
+  },
+  {
+    id: 4,
+    question: "Can I access the platform from multiple devices?",
+    answer:
+      "Yes, you can log in from multiple devices such as laptops, tablets, or mobile phones, and your data will stay synced in real time.",
+  },
+  {
+    id: 5,
+    question: "Does the platform receive regular updates?",
+    answer:
+      "Yes, we continuously improve the platform with performance enhancements, new features, and security updates without disrupting your usage.",
+  },
+  {
+    id: 6,
+    question: "Is customer support available if I need help?",
+    answer:
+      "Our support team is available to assist you with any questions or issues through email and in-app support channels.",
+  },
+];
 const Accordion = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
-
-  const faqItems: readonly FAQItem[] = [
-    {
-      id: 1,
-      question: "Is this a cloud-based software?",
-      answer:
-        "Yes, this is a fully cloud-based platform. You can access it from anywhere using a modern web browser without installing any additional software.",
-    },
-    {
-      id: 2,
-      question: "Do I need any technical knowledge to use this?",
-      answer:
-        "No technical expertise is required. The interface is designed to be user-friendly, allowing anyone to get started with minimal guidance.",
-    },
-    {
-      id: 3,
-      question: "Is my data secure on the platform?",
-      answer:
-        "Absolutely. We use industry-standard security practices including encryption, secure authentication, and regular backups to protect your data.",
-    },
-    {
-      id: 4,
-      question: "Can I access the platform from multiple devices?",
-      answer:
-        "Yes, you can log in from multiple devices such as laptops, tablets, or mobile phones, and your data will stay synced in real time.",
-    },
-    {
-      id: 5,
-      question: "Does the platform receive regular updates?",
-      answer:
-        "Yes, we continuously improve the platform with performance enhancements, new features, and security updates without disrupting your usage.",
-    },
-    {
-      id: 6,
-      question: "Is customer support available if I need help?",
-      answer:
-        "Our support team is available to assist you with any questions or issues through email and in-app support channels.",
-    },
-  ];
-
 
   const toggleItem = (id: number) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -63,7 +61,7 @@ const Accordion = () => {
           const isExpanded = expandedId === item.id;
 
           return (
-            <div key={item.id} className="py-4  border-b border-black pb-4">
+            <div key={item.id} className="py-5 px-6 border-b border-black pb-4">
               <button
                 className="flex w-full items-center justify-between text-left cursor-pointer"
                 onClick={() => toggleItem(item.id)}

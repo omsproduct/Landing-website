@@ -128,10 +128,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* separator */}
-                <div className="absolute z-50 bottom-0 h-15 w-full bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)]"></div>
+                <div className="absolute z-50 bottom-0 h-15 w-full bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)]"/>
             </DottedHeroSection>
-
-            {/* separator */}
         </>
     )
 }

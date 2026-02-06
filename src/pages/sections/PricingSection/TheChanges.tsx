@@ -33,7 +33,7 @@ const TheChanges = () => {
             <div className="w-full h-full mt-14">
                 {ChargesData.map((charges) => (
                     <div key={charges.id} className="relative">
-                        <div className="py-5 px-3.5">
+                        <div className="py-5 px-4">
                             <h5 className="text-base font-bold">{charges.title}</h5>
                             <p className="text-sm text-[#818181] font-medium">{charges.description}</p>
                         </div>

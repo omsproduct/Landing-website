@@ -160,11 +160,11 @@ const UserSection = () => {
                         {loopUsers.map((user, idx) => (
                             <div
                                 key={`${user.name}-${idx}`}
-                                className="w-[calc(100vw-3rem)] sm:w-80 md:w-87.5 shrink-0 bg-white border border-[#5E4DE1] rounded-3xl md:rounded-4xl px-4 sm:px-5 md:px-6 py-4 sm:py-5 shadow-sm hover:shadow-lg transition-all duration-300"
+                                className="w-[calc(100vw-3rem)] sm:w-80 md:w-87.5 shrink-0 bg-white border border-[#5E4DE1] rounded-3xl md:rounded-4xl px-4 sm:px-5 md:px-6 py-4 sm:py-5 transition-all duration-300"
                             >
                                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                                     <div
-                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-md"
                                         style={{ backgroundColor: user.bg }}
                                     >
                                         <img
@@ -192,7 +192,7 @@ const UserSection = () => {
 
                                 <div className="space-y-3.5 text-xs">
                                     <p className="flex items-center gap-1 hover:opacity-80 transition-opacity text-xs font-bold text-black">
-                                        show more <ChevronDown size={12} className="sm:w-3.5 sm:h-3.5" />
+                                        Show more <ChevronDown size={12} className="sm:w-3.5 sm:h-3.5" />
                                     </p>
                                     <span className="text-[10px] text-[#5E4DE1]">{user.date}</span>
                                 </div>

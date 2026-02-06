@@ -28,7 +28,7 @@ const PartnershipData: readonly PartnershipItem[] = [
 const Partnership = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-124 text-center space-y-6 mx-auto">
+      <div className="w-150 text-center space-y-6">
         <h1 className="text-3xl font-semibold text-black"><span className='text-[#5E4DE1]'>Partnership</span>?</h1>
         <p className="text-sm text-[#818181] font-medium">We believe partnership goes beyond traditional systems, built on trust and transparency, enabling long-term collaboration to create a truthful, sustainable, and future-ready educational ecosystem.</p>
       </div>
@@ -36,8 +36,8 @@ const Partnership = () => {
       <div className="flex  gap-13 mt-14">
         <div className="py-4">
           {PartnershipData.map((item) => (
-            <div key={item.id} className='flex items-start gap-2 mb-4'>
-              <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
+            <div key={item.id} className='flex items-start gap-2 mb-4 px-4'>
+              <div className='w-1 h-1 rounded-full bg-[#818181] mt-2'></div>
               <div className='w-113.5 text-sm font-medium text-[#818181]'>{item.title}</div>
             </div>
           ))}
