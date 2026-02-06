@@ -1,9 +1,9 @@
 // src/pages/Pricing.tsx
 import Footer from '../Footer'
 import Header from '../Header'
-import ChangesFor from './ChangesFor'
-import InputDetails from './InputDetails'
-import TheChanges from './TheChanges'
+import ChangesFor from './PricingSection/ChangesFor'
+import InputDetails from './PricingSection/InputDetails'
+import TheChanges from './PricingSection/TheChanges'
 
 const Pricing = () => {
   return (

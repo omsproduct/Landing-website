@@ -1,19 +1,19 @@
 // src/pages/Information.tsx
+import Footer from '../Footer'
 import Header from '../Header'
+import KnowOMS from './InformationSection/KnowOMS'
+import Partnership from './InformationSection/Partnership'
 
 const Information = () => {
   return (
     <>
       <Header />
-      <div id='info-section' className="min-h-screen">
-        <div className="max-w-4xl mx-auto mt-20 p-8">
-          <h1 className="text-4xl font-bold text-[#543ED2] mb-6">Info & More</h1>
-          <p className="text-lg text-gray-700">
-            This is the information page with more details about our services.
-          </p>
-          {/* Add your info content here */}
-        </div>
+      <div id='info-section' className="min-h-screen max-w-7xl mx-57 mt-20 flex flex-col items-center">
+        <KnowOMS />
+        <Partnership />
       </div>
+
+      <Footer />
     </>
   )
 }

@@ -25,14 +25,14 @@ const TheChanges = () => {
             </div>
 
             <div className="w-full h-full mt-14">
-                {ChargesData.map((charges, index) => (
+                {ChargesData.map((charges) => (
                     <div key={charges.id} className="relative">
                         <div className="py-5 px-3.5">
                             <h5 className="text-base font-bold">{charges.title}</h5>
                             <p className="text-sm text-[#818181] font-medium">{charges.description}</p>
                         </div>
                         {/* Divider - Only show if not the last item */}
-                        {index < ChargesData.length - 1 && (
+                        {charges.id !== ChargesData.length && (
                             <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                         )}
                     </div>

@@ -1,6 +1,4 @@
 
-
-
 const ChangesFor = () => {
     return (
         <div className="mt-18 flex flex-col items-center mb-20">
@@ -68,17 +66,13 @@ const ChangesFor = () => {
                     </div>
                 </div>
 
+                {/* Separators */}
                 <div className="absolute -top-5 left-122 w-0.5 h-full bg-linear-to-b from-transparent via-[#5E4DE1] to-transparent" />
                 <div className="absolute top-30 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                 <div className="absolute top-60 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                 <div className="absolute top-90 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                 <div className="absolute top-120 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
-           
-                
-                {/* <div className='absolute -top-50 left-100 relative'>
-                    <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358313/Group_427321024_f132ft.svg" alt="faded-logo" className="absolute -left-20" />
-                    <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358497/Vector_445_km9ucb.svg" alt="vector-445" className="absolute" />
-                </div> */}
+
             </div>
         </div>
     )
