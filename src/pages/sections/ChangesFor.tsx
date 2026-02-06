@@ -1,60 +1,12 @@
 
 
-// const ChangesForData = [
-//     {
-//         id: 1,
-
-//         content: "Our pricing is not just for software access—it is about creating long-term value by partnering with institutions to build a simple, efficient, and sustainable digital ecosystem for management, staff, and students."
-//     },
-//     {
-//         id: 2,
-
-//         content: "We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience."
-//     },
-//     {
-//         id: 3,
-
-//         content: "Our system helps institutions run faster and more efficiently with better control over academics, finance, operations, and communication."
-//     },
-//     {
-//         id: 4,
-
-//         content: "We focus on building an easy, suitable, and scalable digital ecosystem that simplifies daily institutional operations and decision-making."
-//     },
-//     {
-//         id: 5,
-
-//         content: "Our pricing supports the development of a stable and reliable management environment that replaces manual processes with smart automation."
-//     },
-//     {
-//         id: 6,
-
-//         content: "We charge to create meaningful value by reducing administrative workload and saving time through structured, operations-driven software."
-//     },
-//     {
-//         id: 7,
-
-//         content: "Our goal is to strengthen institutions by improving productivity for educational staff and delivering a smoother, more organized experience for students."
-//     },
-//     {
-//         id: 8,
-
-//         content: "Our charges enable continuous innovation, system improvements, security, and support—ensuring institutions are prepared for the future of education."
-//     },
-//     {
-//         id: 9,
-
-//         content: "We are committed to continuously enhancing the platform and, in the future, introducing dedicated products such as:"
-//     },
-
-// ]
 
 const ChangesFor = () => {
     return (
         <div className="mt-18 flex flex-col items-center mb-20">
             <h1 className="text-3xl font-semibold text-black mb-14"><span className='text-[#5E4DE1]'>Changes&nbsp;</span>For...</h1>
             <div className='relative'>
-                <div className='grid grid-cols-2 gap-18 text-base font-medium text-[#818181]'>
+                <div className='grid grid-cols-2 gap-12 text-base font-medium text-[#818181]'>
 
                     {/* First Row  */}
                     <div className='flex items-start gap-2'>
@@ -69,47 +21,64 @@ const ChangesFor = () => {
                     {/* Second Row  */}
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>Our pricing is not just for software access—it is about creating long-term value by partnering with institutions to build a simple, efficient, and sustainable digital ecosystem for management, staff, and students.</div>
+                        <div className='w-113.5'>Our system helps institutions run faster and more efficiently with better control over academics, finance, operations, and communication.</div>
                     </div>
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience.</div>
+                        <div className='w-113.5'>We focus on building an easy, suitable, and scalable digital ecosystem that simplifies daily institutional operations and decision-making.</div>
                     </div>
 
-                     {/* Third Row */}
-                     <div className='flex items-start gap-2'>
+                    {/* Third Row */}
+                    <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>Our pricing is not just for software access—it is about creating long-term value by partnering with institutions to build a simple, efficient, and sustainable digital ecosystem for management, staff, and students.</div>
+                        <div className='w-113.5'>Our pricing supports the development of a stable and reliable management environment that replaces manual processes with smart automation.</div>
                     </div>
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience.</div>
+                        <div className='w-113.5'>We charge to create meaningful value by reducing administrative workload and saving time through structured, operations-driven software.</div>
                     </div>
 
-                     {/* Fourth Row */}
-                     <div className='flex items-start gap-2'>
+                    {/* Fourth Row */}
+                    <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>Our pricing is not just for software access—it is about creating long-term value by partnering with institutions to build a simple, efficient, and sustainable digital ecosystem for management, staff, and students.</div>
+                        <div className='w-113.5'>Our goal is to strengthen institutions by improving productivity for educational staff and delivering a smoother, more organized experience for students.</div>
                     </div>
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience.</div>
+                        <div className='w-113.5'>Our charges enable continuous innovation, system improvements, security, and support—ensuring institutions are prepared for the future of education.</div>
                     </div>
 
-                     {/* Fifth Row */}
-                     <div className='flex items-start gap-2'>
-                        <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>Our pricing is not just for software access—it is about creating long-term value by partnering with institutions to build a simple, efficient, and sustainable digital ecosystem for management, staff, and students.</div>
-                    </div>
+                    {/* Fifth Row */}
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
-                        <div className='w-113.5'>We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience.</div>
+                        <div className='w-113.5'>We are committed to continuously enhancing the platform and, in the future, introducing dedicated products such as:
+                            <div className="space-y-1 text-sm ml-3 mt-2.5">
+                                <p className="flex gap-1"><div>1.&nbsp;</div>Student-driven solutions to improve engagement and learning experience</p>
+                                <p className="flex gap-1"><div>2.&nbsp;</div>Institution-driven solutions for better governance and strategic management</p>
+                                <p className="flex gap-1"><div>3.&nbsp;</div>Staff-driven solutions to simplify teaching, attendance, and performance workflows</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="relative -mt-15 -ml-7">
+                            <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358313/Group_427321024_f132ft.svg" alt="faded-logo" className="" />
+                            <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358497/Vector_445_km9ucb.svg" alt="vector-445" className="absolute top-3/5 left-3/5 transform -translate-x-1/2 -translate-y-1/2" />
+                        </div>
                     </div>
                 </div>
 
-                <div className="absolute top-23 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
-                <div className="absolute top-0 left-130 w-0.5 h-full bg-linear-to-b from-transparent via-[#5E4DE1] to-transparent" />
-                <div className="absolute bottom-23 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                <div className="absolute -top-5 left-122 w-0.5 h-full bg-linear-to-b from-transparent via-[#5E4DE1] to-transparent" />
+                <div className="absolute top-30 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                <div className="absolute top-60 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                <div className="absolute top-90 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                <div className="absolute top-120 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+           
+                
+                {/* <div className='absolute -top-50 left-100 relative'>
+                    <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358313/Group_427321024_f132ft.svg" alt="faded-logo" className="absolute -left-20" />
+                    <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358497/Vector_445_km9ucb.svg" alt="vector-445" className="absolute" />
+                </div> */}
             </div>
         </div>
     )
