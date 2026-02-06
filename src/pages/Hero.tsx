@@ -21,30 +21,30 @@ const Hero = () => {
                         </h1>
 
                         <div className="flex gap-5 justify-center items-center">
-                           <Button
-  className="
-    relative h-10 w-38 px-6
-    bg-[#543ED2] text-white text-base rounded-sm
-    border border-white/20
-    overflow-hidden
-    backdrop-blur-md
+                            <Button
+                                className="
+                                    relative h-10 w-38 px-6
+                                    bg-[#543ED2] text-white text-base rounded-sm
+                                    border border-white/20
+                                    overflow-hidden
+                                    backdrop-blur-md
 
-    transition-all duration-300 ease-out
-    cursor-pointer
+                                    transition-all duration-300 ease-out
+                                    cursor-pointer
 
-    hover:shadow-[0_12px_35px_rgba(84,62,210,0.55)]
+                                    hover:shadow-[0_12px_35px_rgba(84,62,210,0.55)]
 
-    after:absolute after:top-0 after:-left-2/3
-    after:w-1/2 after:h-full
-    after:bg-white/20
-    after:skew-x-[-20deg]
-    after:transition-all after:duration-500
-    hover:after:left-[120%]
-    hover:bg-[#543ED2]
-  "
->
-  Log in
-</Button>
+                                    after:absolute after:top-0 after:-left-2/3
+                                    after:w-1/2 after:h-full
+                                    after:bg-white/20
+                                    after:skew-x-[-20deg]
+                                    after:transition-all after:duration-500
+                                    hover:after:left-[120%]
+                                    hover:bg-[#543ED2]
+                                "
+                            >
+                                Log in
+                            </Button>
 
 
                             <Button

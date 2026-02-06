@@ -4,44 +4,90 @@ import { Button } from "../../../components/ui/button"
 const InputDetails = () => {
   return (
     <div className="flex flex-col items-center">
-          <h1 className="text-3xl font-semibold text-black  mb-14">Get the&nbsp;<span className='text-[#5E4DE1]'>exact price</span> for your&nbsp;<span className='text-[#5E4DE1]'>institution...</span></h1>
-        
-          {/* Add your info content here */}
-        <div>
-          <div className='w-245 h-141.5 grid grid-cols-3 gap-4 justify-center'>
-            <div className=''>
-              <div className='w-77.5 h-11.5'>
-                <div>
-                  <label className='text-[10px] font-medium'>Name</label>
-                  <Input type="text" placeholder='Enter your full name' className='w-full h-full py-3.5 px-6 border border-[#b0b0b0] rounded-md mb-5' />
+      <h1 className="text-3xl font-semibold text-black mb-14">
+        Get the <span className="text-[#5E4DE1]">exact price</span> for your{" "}
+        <span className="text-[#5E4DE1]">institution...</span>
+      </h1>
+
+      {/* Outer Frame */}
+      <div className="relative w-245">
+
+        {/* Dashed Border Frame */}
+        <div className="absolute inset-0 border-t border-dashed border-[#5E4DE4] pointer-events-none top-5" />
+        <div className="absolute inset-0 border-l border-dashed border-[#5E4DE4] pointer-events-none left-5" />
+        <div className="absolute inset-0 border-l border-dashed border-[#5E4DE4] pointer-events-none left-87" />
+        <div className="absolute inset-0 border-r border-dashed border-[#5E4DE4] pointer-events-none right-5" />
+        <div className="absolute inset-0 border-b border-dashed border-[#5E4DE4] pointer-events-none bottom-5" />
+
+        {/* Content */}
+        <div className="relative px-12 py-8">
+          <div className="grid grid-cols-3 gap-8">
+
+            {/* Form */}
+            <div className="">
+              {[
+                ["Name", "Enter your full name"],
+                ["Job role", "Enter your current job role"],
+                ["Phone", "Enter your phone number"],
+                ["Email", "Enter your email ID"],
+                ["Message (optional)", "Enter message"],
+              ].map(([label, placeholder]) => (
+                <div key={label} className="mb-4">
+                  <label className="text-[10px] font-medium">
+                    {label}
+                  </label>
+                  <Input
+                    placeholder={placeholder}
+                    className="h-11 px-5 border border-[#b0b0b0]"
+                  />
                 </div>
-                <div>
-                  <label className='text-[10px] font-medium'>Job role</label>
-                  <Input type="text" placeholder='Enter your current job role' className='w-full h-full py-3.5 px-6 border border-[#b0b0b0] rounded-md mb-5' />
-                </div>
-                <div>
-                  <label className='text-[10px] font-medium'>Phone</label>
-                  <Input type="text" placeholder='Enter your phone number' className='w-full h-full py-3.5 px-6 border border-[#b0b0b0] rounded-md mb-5' />
-                </div>
-                <div>
-                  <label className='text-[10px] font-medium'>Email</label>
-                  <Input type="text" placeholder='Enter your email ID' className='w-full h-full py-3.5 px-6 border border-[#b0b0b0] rounded-md mb-5' />
-                </div>
-                 <div>
-                  <label className='text-[10px] font-medium'>Message(optional)</label>
-                  <Input type="text" placeholder='Enter message' className='w-full h-full py-3.5 px-6 border border-[#b0b0b0] rounded-md mb-5' />
-                </div>
-                <Button className='w-full h-12 bg-[#5E4DE4] px-7.5 py-2.5 hover:bg-[#5E4DE4]/90 cursor-pointer mt-2.5'>Get the price</Button>
-              </div>
+              ))}
+
+              <Button
+  className="
+    relative overflow-hidden
+    w-full h-12 mt-3
+    bg-[#5E4DE4]
+    hover:bg-[#543ED2]
+    transition-colors duration-300
+
+    after:content-['']
+    after:absolute
+    after:top-0
+    after:-left-[60%]
+    after:w-1/2
+    after:h-full
+    after:bg-white/20
+    after:skew-x-[-20deg]
+    after:transition-all
+    after:duration-500
+    after:ease-out
+
+    hover:after:left-[120%]
+    cursor-pointer
+  "
+>
+  <span className="relative z-10">Get the price</span>
+</Button>
+
             </div>
-            <div className='col-span-2 flex flex-col justify-center items-center'>
-              <div className='space-y-7'>
-                <img src='https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg' alt='Logo' className='h-[136.54px] w-[430.16px] opacity-5' />
-                <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770189496/Vector_446_xdtyms.svg" alt="Vector 446" />
-              </div>
+
+            {/* Right Side Graphics */}
+            <div className="col-span-2 flex flex-col items-center justify-center">
+              <img
+                src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
+                alt="Logo"
+                className="w-107.5 opacity-5 mb-6"
+              />
+              <img
+                src="https://res.cloudinary.com/dflelt85r/image/upload/v1770189496/Vector_446_xdtyms.svg"
+                alt="Vector"
+              />
             </div>
+
           </div>
         </div>
+      </div>
     </div>
   )
 }

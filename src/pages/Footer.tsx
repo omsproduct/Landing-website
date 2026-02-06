@@ -56,7 +56,7 @@ const Footer = () => {
         
 
             <p className="text-xs font-semibold text-[#7C7C7C]">
-              © {new Date().getFullYear()} oms.org.in, All rights reserved.
+              © {new Date().getFullYear()} omslab.in, All rights reserved.
             </p>
           </div>
 
