@@ -1,6 +1,20 @@
 import { Input } from "../../../components/ui/input"
 import { Button } from "../../../components/ui/button"
 
+type Field = {
+  label: string
+  placeholder: string
+}
+
+const fields: readonly Field[] = [
+  { label: "Name", placeholder: "Enter your full name" },
+  { label: "Job role", placeholder: "Enter your current job role" },
+  { label: "Phone", placeholder: "Enter your phone number" },
+  { label: "Email", placeholder: "Enter your email ID" },
+  { label: "Message (optional)", placeholder: "Enter message" },
+]
+
+
 const InputDetails = () => {
   return (
     <div className="flex flex-col items-center">
@@ -24,52 +38,44 @@ const InputDetails = () => {
           <div className="grid grid-cols-3 gap-8">
 
             {/* Form */}
-            <div className="">
-              {[
-                ["Name", "Enter your full name"],
-                ["Job role", "Enter your current job role"],
-                ["Phone", "Enter your phone number"],
-                ["Email", "Enter your email ID"],
-                ["Message (optional)", "Enter message"],
-              ].map(([label, placeholder]) => (
-                <div key={label} className="mb-4">
+            <div className="col-span-1">
+              {fields.map((field) => (
+                <div key={field.label} className="mb-4">
                   <label className="text-[10px] font-medium">
-                    {label}
+                    {field.label}
                   </label>
                   <Input
-                    placeholder={placeholder}
+                    placeholder={field.placeholder}
                     className="h-11 px-5 border border-[#b0b0b0]"
                   />
                 </div>
               ))}
 
               <Button
-  className="
-    relative overflow-hidden
-    w-full h-12 mt-3
-    bg-[#5E4DE4]
-    hover:bg-[#543ED2]
-    transition-colors duration-300
-
-    after:content-['']
-    after:absolute
-    after:top-0
-    after:-left-[60%]
-    after:w-1/2
-    after:h-full
-    after:bg-white/20
-    after:skew-x-[-20deg]
-    after:transition-all
-    after:duration-500
-    after:ease-out
-
-    hover:after:left-[120%]
-    cursor-pointer
+                className="
+                  relative overflow-hidden
+                  w-full h-12 mt-3
+                  bg-[#5E4DE4]
+                  hover:bg-[#543ED2]
+                  transition-all duration-300 ease-out
+                  cursor-pointer
+                  hover:shadow-[0_12px_35px_rgba(84,62,210,0.55)]
+                  after:content-['']
+                  after:absolute
+                  after:top-0
+                  after:-left-2/3
+                  after:w-1/2
+                  after:h-full
+                  after:bg-white/15
+                  after:skew-x-[-20deg]
+                  after:transition-all
+                  after:duration-700
+                  after:ease-in-out
+                  hover:after:left-[120%]
   "
->
-  <span className="relative z-10">Get the price</span>
-</Button>
-
+              >
+                <span className="relative z-10">Get the price</span>
+              </Button>
             </div>
 
             {/* Right Side Graphics */}

@@ -1,7 +1,11 @@
 import { Button } from '../../../components/ui/button'
 
-
-const AboutData = [
+interface AboutItem {
+    readonly id: number;
+    readonly title: string;
+    readonly description: string;
+}
+const AboutData: readonly AboutItem[] = [
     {
         id: 1,
         title: "What we do...",

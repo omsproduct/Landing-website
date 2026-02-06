@@ -1,5 +1,11 @@
+interface SolutionItem {
+  readonly id: number;
+  readonly title: string;
+  readonly content: string;
+  readonly description: string;
+}
 
-const solutionData = [
+const solutionData: readonly SolutionItem[] = [
   {
     id: 1,
     title: "Scattered Systems",
@@ -53,17 +59,31 @@ const Solution = () => {
           We <span className="text-[#5E4DE1]">Solve...</span>
         </h2>
         <div className="relative px-5 py-5 ml-10">
+          <div className="absolute top-5 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-46.75 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
 
-          <div className="relative grid grid-cols-3 gap-14">
+          <div className="absolute bottom-46.75 left-0 right-0 border-b border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute bottom-5 left-0 right-0 border-b border-dashed border-[#5E4DE1]"></div>
+
+          <div className="absolute top-0 bottom-0 left-5  border-l border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 left-86.75  border-l border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 left-104.5  border-l border-dashed border-[#5E4DE1]"></div>
+
+
+          <div className="absolute top-0 bottom-0 right-8.5  border-r border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 right-90.25  border-r border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 right-107.75  border-r border-dashed border-[#5E4DE1]"></div>
+
+          <div className="grid grid-cols-3 gap-14">
             {solutionData.map((item) => (
-              <div key={item.id} className="w-82 h-42 border border-[#5E4DE1] rounded-xl">
+              <div key={item.id} className="w-82 h-42 border border-[#5E4DE1] rounded-xl z-10">
                 <div className="flex gap-4 bg-[#E4E0FF] w-full h-22.25 rounded-t-xl">
                   <div className="bg-[#5E4DE1] p-4 mb-2.25 rounded-tl-xl rounded-br-xl text-xl font-semibold text-white">
                     {item.title}
                   </div>
                   <div className="text-[#5E4DE1] text-base flex items-center justify-center">{item.content}</div>
                 </div>
-                <div className="flex items-start px-4 py-2 justify-center gap-1">
+                <div className="flex items-start px-4 py-2 justify-center gap-1 bg-white rounded-bl-2xl rounded-br-2xl">
                   <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/Frame_2147223785_euoi5r.svg" alt="check-fill" className="mt-0.5 shrink-0" />
                   <p className="text-sm text-[#818181]">{item.description}</p>
                 </div>
@@ -71,20 +91,7 @@ const Solution = () => {
 
             ))}
           </div>
-          <div className="absolute top-5 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-46.75 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
-
-          <div className="absolute bottom-46.75 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute bottom-5 left-0 right-0 border-t border-dashed border-[#5E4DE1]"></div>
-
-          <div className="absolute top-0 bottom-0 left-5  border-l border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 left-86.75  border-l border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 left-104.5  border-l border-dashed border-[#5E4DE1]"></div>
-
-
-          <div className="absolute top-0 bottom-0 right-8.5  border-l border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 right-90.25  border-l border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 right-107.75  border-l border-dashed border-[#5E4DE1]"></div>
+          
         </div>
       </div>
     </>

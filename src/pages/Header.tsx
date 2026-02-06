@@ -1,6 +1,3 @@
-//src/pages/Header.tsx
-"use client";
-
 import { BoxArrowRight } from "react-bootstrap-icons";
 import { NavLink } from "react-router-dom";
 

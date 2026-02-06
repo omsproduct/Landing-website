@@ -1,4 +1,3 @@
-
 const GainData = [
     {
         id: 1,

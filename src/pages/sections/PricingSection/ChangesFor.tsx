@@ -1,4 +1,3 @@
-
 const ChangesFor = () => {
     return (
         <div className="mt-18 flex flex-col items-center mb-20">
@@ -50,14 +49,15 @@ const ChangesFor = () => {
                     <div className='flex items-start gap-2'>
                         <div className='w-2 h-2 rounded-full bg-[#818181] mt-2'></div>
                         <div className='w-113.5'>We are committed to continuously enhancing the platform and, in the future, introducing dedicated products such as:
-                            <div className="space-y-1 text-sm ml-3 mt-2.5">
-                                <p className="flex gap-1"><div>1.&nbsp;</div>Student-driven solutions to improve engagement and learning experience</p>
-                                <p className="flex gap-1"><div>2.&nbsp;</div>Institution-driven solutions for better governance and strategic management</p>
-                                <p className="flex gap-1"><div>3.&nbsp;</div>Staff-driven solutions to simplify teaching, attendance, and performance workflows</p>
-                            </div>
+                            <ol className="list-decimal ml-7 mt-2.5 space-y-1 text-sm">
+                                <li>Student-driven solutions to improve engagement and learning experience</li>
+                                <li>Institution-driven solutions for better governance and strategic management</li>
+                                <li>Staff-driven solutions to simplify teaching, attendance, and performance workflows</li>
+                            </ol>
                         </div>
                     </div>
 
+                    {/* Faded Logo */}
                     <div>
                         <div className="relative -mt-15 -ml-7">
                             <img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770358313/Group_427321024_f132ft.svg" alt="faded-logo" className="" />

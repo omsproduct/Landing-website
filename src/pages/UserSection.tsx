@@ -1,7 +1,20 @@
 import { StarFill, StarHalf } from "react-bootstrap-icons"
-import { useEffect, useState, useRef } from "react"
-import {ChevronDown } from "lucide-react"
-const users = [
+import { ChevronDown } from "lucide-react"
+import { useEffect, useRef } from "react"
+
+interface UserReview {
+    readonly image: string
+    readonly name: string
+    readonly bg: string
+    readonly role: string
+    readonly rating: number
+    readonly review: string
+    readonly date: string
+}
+
+/* ---------------- USERS ---------------- */
+
+const users: readonly UserReview[] = [
     {
         image: 'https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/c356698141550d9ee30cbfb5612da8155a5e0b6c_t4zinm.png',
         name: 'Samantha Payne',
@@ -49,97 +62,109 @@ const users = [
     },
 ]
 
+
+/* ---------------- COMPONENT ---------------- */
+
 const UserSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [isAnimating, setIsAnimating] = useState(false)
-    const containerRef = useRef<HTMLDivElement>(null)
+    const trackRef = useRef<HTMLDivElement | null>(null)
+    const offsetRef = useRef(0)
+    const pausedRef = useRef(false)
 
-    // Get the 3 users to display based on current index
-    const getVisibleUsers = () => {
-        const visibleUsers = []
-        for (let i = 0; i < 3; i++) {
-            const index = (currentIndex + i) % users.length
-            visibleUsers.push(users[index])
-        }
-        return visibleUsers
-    }
+    // duplicate for infinite loop
+    const loopUsers = [...users, ...users]
 
-    // Auto-scroll functionality
     useEffect(() => {
-        const scrollInterval = setInterval(() => {
-            setIsAnimating(true)
-            setCurrentIndex((prev) => (prev + 1) % users.length)
-            
-            // Reset animation state after transition
-            setTimeout(() => setIsAnimating(false), 500)
-        }, 3000) // Change every 3 seconds
+        const track = trackRef.current
+        if (!track) return
 
-        return () => clearInterval(scrollInterval)
+        let rafId: number
+        const speed = 0.35
+
+        const animate = () => {
+            if (!pausedRef.current) {
+                offsetRef.current += speed
+                track.style.transform = `translateX(-${offsetRef.current}px)`
+
+                if (offsetRef.current >= track.scrollWidth / 2) {
+                    offsetRef.current = 0
+                }
+            }
+
+            rafId = requestAnimationFrame(animate)
+        }
+
+        // Start animation only on desktop
+        const isDesktop = window.innerWidth >= 768
+        if (isDesktop) {
+            rafId = requestAnimationFrame(animate)
+        }
+
+        return () => {
+            if (rafId) cancelAnimationFrame(rafId)
+        }
     }, [])
 
-    // Render stars based on rating
     const renderStars = (rating: number) => {
-        const stars = []
-        const fullStars = Math.floor(rating)
-        const hasHalfStar = rating % 1 >= 0.5
+        const stars: React.ReactNode[] = []
+        const full = Math.floor(rating)
+        const half = rating % 1 >= 0.5
 
-        for (let i = 0; i < fullStars; i++) {
-            stars.push(<StarFill key={`full-${i}`} className="text-[#FF9D00] w-4 h-4" />)
+        for (let i = 0; i < full; i++) {
+            stars.push(
+                <StarFill key={`full-${i}`} className="w-3 h-3 sm:w-4 sm:h-4 text-[#FF9D00]" />
+            )
         }
 
-        if (hasHalfStar) {
-            stars.push(<StarHalf key="half" className="text-[#FF9D00] w-4 h-4" />)
+        if (half) {
+            stars.push(
+                <StarHalf key="half" className="w-3 h-3 sm:w-4 sm:h-4 text-[#FF9D00]" />
+            )
         }
 
-        // Fill remaining stars up to 5
-        const remainingStars = 5 - stars.length
-        for (let i = 0; i < remainingStars; i++) {
-            stars.push(<StarFill key={`empty-${i}`} className="text-gray-300 w-4 h-4" />)
+        while (stars.length < 5) {
+            stars.push(
+                <StarFill
+                    key={`empty-${stars.length}`}
+                    className="w-3 h-3 sm:w-4 sm:h-4 text-gray-300"
+                />
+            )
         }
 
         return stars
     }
 
-    const visibleUsers = getVisibleUsers()
-
     return (
-        <div className="py-8 md:py-12 px-4">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-8">
-                    <h2 className="text-3xl md:text-4xl font-semibold mb-2">Voice Matters</h2>
-                    <div className="text-xl md:text-2xl font-bold text-[#5E4DE1]">
-                        What Our Partner Says About 
-                        <img 
-                            src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg" 
-                            alt="logo" 
-                            className="inline-block h-6 md:h-8 ml-2"
-                        />
-                    </div>
+        <section className="py-6 sm:py-8 md:py-12 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-1.5">Voice Matters</h2>
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#5E4DE1] mb-6 md:mb-7.5">
+                    What Our Partner Says About
+                    <img
+                        src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
+                        alt="logo"
+                        className="inline-block h-4 sm:h-5 md:h-6 lg:h-8 ml-1 sm:ml-2"
+                    />
                 </div>
 
-                <div className="relative">
-                    {/* User Cards Container */}
+                {/* VIEWPORT */}
+                <div
+                    className="overflow-hidden"
+                    onMouseEnter={() => (pausedRef.current = true)}
+                    onMouseLeave={() => (pausedRef.current = false)}
+                >
+                    {/* TRACK - Responsive layout changes */}
                     <div
-                        ref={containerRef}
-                        className={`
-                            grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 
-                            transition-all duration-500 ease-in-out
-                            ${isAnimating ? 'opacity-90' : 'opacity-100'}
-                        `}
+                        ref={trackRef}
+                        className="flex gap-4 sm:gap-5 md:gap-6 w-max will-change-transform md:transform-none"
                     >
-                        {visibleUsers.map((user, idx) => (
+                        {loopUsers.map((user, idx) => (
                             <div
                                 key={`${user.name}-${idx}`}
-                                className={`
-                                    px-5 py-6 border border-[#5E4DE1] rounded-4xl 
-                                    bg-white transition-all duration-300
-                                    ${idx === 1 ? 'scale-100 z-10 shadow-md' : 'scale-95 opacity-90'}
-                                    hover:shadow-[0_12px_35px_rgba(84,62,210,0.2)]
-                                `}
+                                className="w-[calc(100vw-3rem)] sm:w-80 md:w-87.5 shrink-0 bg-white border border-[#5E4DE1] rounded-3xl md:rounded-4xl px-4 sm:px-5 md:px-6 py-4 sm:py-5 shadow-sm hover:shadow-lg transition-all duration-300"
                             >
-                                <div className="flex items-center gap-3 mb-4">
+                                <div className="flex items-center gap-3 mb-3 sm:mb-4">
                                     <div
-                                        className='w-12 h-12 md:w-14 md:h-14 rounded-full shrink-0 overflow-hidden border-2 border-white shadow-md'
+                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0"
                                         style={{ backgroundColor: user.bg }}
                                     >
                                         <img
@@ -148,10 +173,11 @@ const UserSection = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h5 className="text-sm md:text-base font-semibold truncate">{user.name}</h5>
-                                        <p className="text-xs md:text-sm text-[#5E4DE1] truncate">{user.role}</p>
-                                        <div className="flex items-center gap-1 mt-1">
+
+                                    <div className="min-w-0 flex-1">
+                                        <h5 className="font-semibold text-sm sm:text-base truncate">{user.name}</h5>
+                                        <p className="text-xs sm:text-sm text-[#5E4DE1] truncate">{user.role}</p>
+                                        <div className="flex items-center gap-1 mt-0.5 sm:mt-1">
                                             {renderStars(user.rating)}
                                             <span className="text-xs text-gray-500 ml-1">
                                                 ({user.rating})
@@ -159,37 +185,33 @@ const UserSection = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mb-3">
-                                    <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                                        {user.review}
+
+                                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 mb-3 sm:mb-4">
+                                    {user.review}
+                                </p>
+
+                                <div className="space-y-3.5 text-xs">
+                                    <p className="flex items-center gap-1 hover:opacity-80 transition-opacity text-xs font-bold text-black">
+                                        show more <ChevronDown size={12} className="sm:w-3.5 sm:h-3.5" />
                                     </p>
-                                </div>
-                                <div className="space-y-3.5">
-                                    <button className="flex items-center gap-1 text-black font-semibold text-sm hover:text-[#5E4DE1] transition-colors">
-                                        show more 
-                                        <ChevronDown/>
-                                    </button>
-                                    <div className="text-xs text-[#5E4DE1] font-medium">{user.date}</div>
+                                    <span className="text-[10px] text-[#5E4DE1]">{user.date}</span>
                                 </div>
                             </div>
                         ))}
                     </div>
+                </div>
 
-                    {/* Dots indicator for mobile */}
-                    <div className="flex justify-center gap-2 mt-6 md:hidden">
-                        {users.map((_, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setCurrentIndex(idx)}
-                                className={`w-2 h-2 rounded-full transition-all ${
-                                    idx === currentIndex ? 'bg-[#5E4DE1] w-6' : 'bg-gray-300'
-                                }`}
-                            />
-                        ))}
-                    </div>
+                {/* Mobile indicators (optional) */}
+                <div className="flex justify-center gap-2 mt-6 md:hidden">
+                    {users.map((_, idx) => (
+                        <div
+                            key={idx}
+                            className="w-2 h-2 rounded-full bg-gray-300"
+                        />
+                    ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

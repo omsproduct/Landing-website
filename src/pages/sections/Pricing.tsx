@@ -1,4 +1,3 @@
-// src/pages/Pricing.tsx
 import Footer from '../Footer'
 import Header from '../Header'
 import ChangesFor from './PricingSection/ChangesFor'

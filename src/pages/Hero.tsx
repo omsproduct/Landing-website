@@ -2,7 +2,7 @@ import DottedHeroSection from "../components/DottedHeroSection"
 import Header from "./Header"
 import { Button } from "../components/ui/button"
 
-const Hero = () => {
+const Hero: React.FC = () => {
     return (
         <>
             <DottedHeroSection>
@@ -86,7 +86,7 @@ const Hero = () => {
                                 />
                             </div>
                             {/* Top Image - Campus */}
-                            <div className="absolute top-0 -right-7 w-48 h-full bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            <div className="absolute top-1 -right-7 w-48 h-full bg-white  rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
                                     src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275644/Dashboard_1_nexpdr.png"
                                     alt="campus"
@@ -116,7 +116,7 @@ const Hero = () => {
                                 />
                             </div>
                             {/* tom Image - Salary */}
-                            <div className="absolute top-0 right-11 w-48 h-full bg-white rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
+                            <div className="absolute top-1 right-11 w-48 h-full bg-white rounded-tl-4xl rounded-tr-4xl  overflow-hidden border border-gray-100 shadow-[0_0_20px_5px_rgba(84,62,210,0.3)]">
                                 <img
                                     src="https://res.cloudinary.com/dflelt85r/image/upload/v1770275646/Dashboard_2_ltdzyx.png"
                                     alt="salary"

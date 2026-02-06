@@ -1,6 +1,11 @@
 import { SuitHeartFill } from "react-bootstrap-icons";
 
-const socials = [
+type SocialLink = {
+  readonly src: string;
+  readonly alt: string;
+};
+
+const socials: readonly SocialLink[] = [
   { src: "https://res.cloudinary.com/dflelt85r/image/upload/v1770185803/facebook_1_isocog.svg", alt: "Facebook" },
   { src: "https://res.cloudinary.com/dflelt85r/image/upload/v1770185806/instagram_1_rkkunj.svg", alt: "Instagram" },
   { src: "https://res.cloudinary.com/dflelt85r/image/upload/v1770185807/linkedin_1_b0kzsf.svg", alt: "LinkedIn" },
@@ -26,9 +31,9 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center gap-3">
-              {socials.map((social, index) => (
+              {socials.map((social) => (
                 <button
-                  key={index}
+                  key={social.alt}
                   aria-label={social.alt}
                   className="
                     w-9 h-9

@@ -1,4 +1,10 @@
-const ChargesData = [
+interface ChargesItem {
+    readonly id: number;
+    readonly title: string;
+    readonly description: string;
+}
+
+const ChargesData: readonly ChargesItem[] = [
     {
         id: 1,
         title: "One-Time Charges",
@@ -18,7 +24,7 @@ const ChargesData = [
 
 const TheChanges = () => {
     return (
-        <div className="mt-18">
+        <div className="mt-20">
             <div className="w-124 text-center space-y-6 mx-auto">
                 <h1 className="text-3xl font-semibold text-black">The&nbsp;<span className='text-[#5E4DE1]'>Charges...</span></h1>
                 <p className="text-sm text-[#818181] font-medium">We follow a unified pricing system applicable to all types of institutions. The model is transparent and easy to understand, with no hidden costs or complex tiers.</p>

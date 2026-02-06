@@ -1,18 +1,16 @@
-'use client';
-
 import { useState } from "react";
 import { PlusCircleFill, DashCircle } from "react-bootstrap-icons";
 
 interface FAQItem {
-  id: number;
-  question: string;
-  answer: string;
+  readonly id: number;
+  readonly question: string;
+  readonly answer: string;
 }
 
 const Accordion = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
-  const faqItems: FAQItem[] = [
+  const faqItems: readonly FAQItem[] = [
     {
       id: 1,
       question: "Is this a cloud-based software?",
@@ -57,7 +55,7 @@ const Accordion = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 space-y-14">
+    <div className="w-full max-w-3xl mx-auto p-6 space-y-14 mt-30 ">
 
       <h2 className="text-3xl font-semibold text-center">It <span className="text-[#5E4DE1]">Helps...</span></h2>
       <div className="space-y-1">

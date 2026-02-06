@@ -1,4 +1,3 @@
-// src/pages/Information.tsx
 import Footer from '../Footer'
 import Header from '../Header'
 import KnowOMS from './InformationSection/KnowOMS'
@@ -12,7 +11,6 @@ const Information = () => {
         <KnowOMS />
         <Partnership />
       </div>
-
       <Footer />
     </>
   )

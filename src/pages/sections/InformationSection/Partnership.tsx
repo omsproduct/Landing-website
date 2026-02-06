@@ -1,5 +1,8 @@
-
-const PartnershipData = [
+interface PartnershipItem {
+  readonly id: number;
+  readonly title: string;
+}
+const PartnershipData: readonly PartnershipItem[] = [
   {
     id: 1,
     title: "We work as a long-term partner, supporting institutions across all aspects—administration, management, staff coordination, and student experience.",
