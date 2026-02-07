@@ -58,7 +58,7 @@ const Gain = () => {
                             </div>
                         ))}
                         {/* Divider lines */}
-                        <div className="absolute top-27 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                        <div className="absolute top-22 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                         <div className="absolute bottom-58 -left-5 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
                         <div className="absolute -top-4 left-97 w-0.5 h-full bg-linear-to-b from-transparent via-[#5E4DE1] to-transparent" />
 

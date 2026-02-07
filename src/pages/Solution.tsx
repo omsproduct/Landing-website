@@ -67,12 +67,12 @@ const Solution = () => {
 
           <div className="absolute top-0 bottom-0 left-5  border-l border-dashed border-[#5E4DE1]"></div>
           <div className="absolute top-0 bottom-0 left-86.75  border-l border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 left-104.5  border-l border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 left-104.75  border-l border-dashed border-[#5E4DE1]"></div>
 
 
-          <div className="absolute top-0 bottom-0 right-8.5  border-r border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 right-90.25  border-r border-dashed border-[#5E4DE1]"></div>
-          <div className="absolute top-0 bottom-0 right-107.75  border-r border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 right-8.75  border-r border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 right-90.5  border-r border-dashed border-[#5E4DE1]"></div>
+          <div className="absolute top-0 bottom-0 right-108.5  border-r border-dashed border-[#5E4DE1]"></div>
 
           <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-14">
             {solutionData.map((item) => (

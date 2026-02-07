@@ -135,7 +135,24 @@ const ChooseSmarter = () => {
                 </div>
                 <div className="space-y-5 mt-14">
                     <p className="text-[#5E4DE1] text-sm font-semibold">Add any more...</p>
-                    <Button className="relative py-5 px-7.5 bg-[#543ED2] text-base rounded-sm text-white border-2 border-transparent overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-linear-to-r before:from-transparent before:via-[#543ED2]/30 before:to-transparent before:transition-transform before:duration-500 hover:before:translate-x-full hover:bg-white hover:text-[#543ED2] hover:font-semibold hover:border-[#543ED2] transition-all duration-500 cursor-pointer">Get it now</Button>
+                    <Button
+                                className="
+                                    relative h-10 w-35 bg-[#543ED2] text-base rounded-sm text-white
+                                    border-2 border-transparent
+                                    overflow-hidden
+                                    before:absolute before:inset-0
+                                    before:-translate-x-full before:bg-linear-to-r
+                                    before:from-transparent before:via-[#543ED2]/30 before:to-transparent
+                                    before:transition-transform before:duration-500
+                                    hover:before:translate-x-full
+                                    hover:bg-white hover:text-[#543ED2] hover:font-semibold hover:border-[#543ED2]
+                                    transition-all duration-500
+                                    cursor-pointer
+                                    
+                                "
+                            >
+                                Book Demo
+                            </Button>
                 </div>
             </div>
         </>
