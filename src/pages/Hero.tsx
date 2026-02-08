@@ -61,8 +61,6 @@ const Hero: React.FC = () => {
                                     <BookDemo />
                                 </DialogContent>
                             </Dialog>
-
-
                         </div>
 
 

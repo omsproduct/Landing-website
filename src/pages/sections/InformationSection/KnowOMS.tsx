@@ -1,4 +1,6 @@
 import { Button } from '../../../components/ui/button'
+import { Dialog, DialogContent, DialogTrigger } from '../../../components/ui/dialog';
+import BookDemo from '../BookNow';
 
 interface AboutItem {
     readonly id: number;
@@ -54,7 +56,9 @@ const KnowOMS = () => {
                         We are an education-focused technology company building operations-driven software for institutions. Our goal is to simplify management and support institutions through reliable and scalable digital solutions.
                     </p>
 
-                    <Button className="relative h-10 w-38 bg-[#543ED2] text-base rounded-sm text-white
+                    <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button className="relative h-10 w-38 bg-[#543ED2] text-base rounded-sm text-white
                                     border-2 border-transparent
                                     overflow-hidden
                                     before:absolute before:inset-0
@@ -64,9 +68,13 @@ const KnowOMS = () => {
                                     hover:before:translate-x-full
                                     hover:bg-white hover:text-[#543ED2] hover:font-semibold hover:border-[#543ED2]
                                     transition-all duration-500
-                                    cursor-pointer">
-                        Book Demo
-                    </Button>
+                                    cursor-pointer">Book Demo</Button>
+                                </DialogTrigger>
+
+                                <DialogContent variant="form" className="px-5">
+                                    <BookDemo />
+                                </DialogContent>
+                            </Dialog>
                 </div>
             </div>
             <div className='w-75 mt-7.5 mb-10'>

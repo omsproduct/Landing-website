@@ -86,7 +86,7 @@ const BookDemo = () => {
                 alt="Vector"
                 className="mb-25"
               />
-              <h2 className="text-xl font-medium">We will reach you soon 💝</h2>
+              <h2 className="text-xl font-semibold flex items-center gap-2">We will reach you soon...<span><img src="https://res.cloudinary.com/dflelt85r/image/upload/v1770541296/%EF%B8%8F_Smiling_Face_Frontal_n4n2jj.svg" alt="smiley face" /></span></h2>
             </div>
 
           </div>

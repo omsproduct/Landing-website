@@ -1,5 +1,7 @@
 import { WindowSidebar, HandIndexThumb, GraphUp, Folder2Open, ChatSquareDots, JournalBookmark, PieChart, Save2, Person, Diagram3, Building, CurrencyDollar } from "react-bootstrap-icons"
 import { Button } from "../components/ui/button"
+import { Dialog, DialogContent, DialogTrigger } from "../components/ui/dialog"
+import BookDemo from "./sections/BookNow"
 const USPDATA = [
     {
         icons: WindowSidebar,
@@ -135,9 +137,9 @@ const ChooseSmarter = () => {
                 </div>
                 <div className="space-y-5 mt-14">
                     <p className="text-[#5E4DE1] text-sm font-semibold">Add any more...</p>
-                    <Button
-                                className="
-                                    relative h-10 w-35 bg-[#543ED2] text-base rounded-sm text-white
+                     <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button className="relative h-10 w-38 bg-[#543ED2] text-base rounded-sm text-white
                                     border-2 border-transparent
                                     overflow-hidden
                                     before:absolute before:inset-0
@@ -147,12 +149,13 @@ const ChooseSmarter = () => {
                                     hover:before:translate-x-full
                                     hover:bg-white hover:text-[#543ED2] hover:font-semibold hover:border-[#543ED2]
                                     transition-all duration-500
-                                    cursor-pointer
-                                    
-                                "
-                            >
-                                Book Demo
-                            </Button>
+                                    cursor-pointer">Get it now</Button>
+                                </DialogTrigger>
+
+                                <DialogContent variant="form" className="px-5">
+                                    <BookDemo />
+                                </DialogContent>
+                            </Dialog>
                 </div>
             </div>
         </>
