@@ -111,19 +111,19 @@ const YouGet = () => {
           <img
             src="https://res.cloudinary.com/dflelt85r/image/upload/v1770451592/Group_427321006_zlkghl.svg"
             alt="Centralized dashboard illustration"
-            className="-mt-5"
+            className="-mt-5 mx-auto"
           />
 
           <img
             src="https://res.cloudinary.com/dflelt85r/image/upload/v1770451593/Group_427321004_r8digm.svg"
             alt="Automation workflow illustration"
-            className="mt-20 ml-15"
+            className="mt-20 mx-auto"
           />
 
           <img
             src="https://res.cloudinary.com/dflelt85r/image/upload/v1770451587/Group_427321005_dyv81z.svg"
             alt="Analytics and security illustration"
-            className="mt-30 ml-15"
+            className="mt-30 mx-auto"
           />
         </div>
         

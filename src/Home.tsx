@@ -6,6 +6,7 @@ import Accordion from './pages/Accordion'
 import Footer from './pages/Footer'
 import Solution from './pages/Solution'
 import Gain from './pages/Gain'
+// import Get from './pages/get'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Solution/>
       <Gain/>
       <ChooseSmarter />
+      {/* <Get/> */}
       <YouGet />
       <Feedback />
       <Accordion />
