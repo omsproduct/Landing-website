@@ -15,7 +15,7 @@ const Home = () => {
       <Solution/>
       <Gain/>
       <ChooseSmarter />
-      {/* <Get/> */}
+      {/* <Get/>  */}
       <YouGet />
       <Feedback />
       <Accordion />
