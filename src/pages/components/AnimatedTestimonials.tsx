@@ -2,7 +2,7 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "./Avatar"
 import { Separator } from "./Separator"
-import { StarFill, StarHalf, ChevronDown, ChevronUp, Quote } from "react-bootstrap-icons"
+import { StarFill, StarHalf } from "react-bootstrap-icons"
 import { motion, useAnimation, useInView } from "framer-motion"
 import type { Variants } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
@@ -40,17 +40,9 @@ export function AnimatedTestimonials({
   className,
 }: AnimatedTestimonialsProps) {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [expanded, setExpanded] = useState<number | null>(null)
   const [isPaused, setIsPaused] = useState(false)
 
 
-  const MAX_LENGTH = 200
-
-  const getDisplayContent = (content: string, index: number) => {
-    if (expanded === index) return content
-    if (content.length <= MAX_LENGTH) return content
-    return content.slice(0, MAX_LENGTH) + "..."
-  }
 
   // Refs for scroll animations
   const sectionRef = useRef(null)
@@ -151,13 +143,6 @@ export function AnimatedTestimonials({
 
   const visibleProfiles = [prevIndex, activeIndex, nextIndex]
 
-
-  // const visibleDots = [
-  //   (activeIndex - 1 + total) % total,
-  //   activeIndex,
-  //   (activeIndex + 1) % total,
-  // ]
-
   // Date formator 
   const formatDate = (date: string | Date) => {
     const d = new Date(date)
@@ -170,6 +155,17 @@ export function AnimatedTestimonials({
 
   return (
     <section ref={sectionRef} id="testimonials" className={`py-24 overflow-hidden bg-white ${className || ""}`}>
+      <svg width="0" height="0">
+        <defs>
+          <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FF3BD4" />
+            <stop offset="33%" stopColor="#FFB5EF" />
+            <stop offset="66%" stopColor="#FE98E8" />
+            <stop offset="100%" stopColor="#FFEDA4" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <div className="px-14 md:px-20 lg:px-32">
         <motion.div
           initial="hidden"
@@ -181,10 +177,24 @@ export function AnimatedTestimonials({
           <motion.div variants={itemVariants} className="flex flex-col justify-center">
             <div className="space-y-6">
               {badgeText && (
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[linear-gradient(to_bottom_right,#FF3BD499,#FFB5EF99,#FE98E899,#FFEDA499)] text-black">
-                  <StarFill className="mr-1 h-3.5 w-3.5 fill-black" />
-                  <span>{badgeText}</span>
+                <div className="relative inline-flex items-center rounded-full p-[2px] bg-[linear-gradient(270deg,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4,#FF3BD4)] bg-[length:300%_300%] animate-gradient">
+
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-white text-sm font-semibold">
+
+                    <span className="mr-1 bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] bg-clip-text text-transparent flex">
+                      <StarFill
+                        className="mr-1 h-3.5 w-3.5"
+                        style={{ fill: "url(#starGradient)" }}
+                      />
+                    </span>
+
+                    <span className="bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] bg-clip-text text-transparent">
+                      {badgeText}
+                    </span>
+
+                  </div>
                 </div>
+
               )}
 
               <h2 className="text-3xl text-[#5E4DE1] font-bold tracking-tighter sm:text-4xl md:text-5xl">{title}
@@ -192,7 +202,7 @@ export function AnimatedTestimonials({
               </h2>
 
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">{subtitle}</p>
-             
+
               <div className="relative h-20 w-56 overflow-hidden pt-6">
                 {visibleProfiles.map((index) => {
                   const testimonial = testimonials[index]
@@ -218,8 +228,8 @@ export function AnimatedTestimonials({
                     >
                       <Avatar
                         className={`h-14 w-14 border-2 ${index === activeIndex
-                            ? "border-2 border-white shadow-lg shadow-[#5E4DE1]/30"
-                            : "border-[#5E4DE1]/30"
+                          ? "border-2 border-white shadow-lg shadow-[#5E4DE1]/30"
+                          : "border-[#5E4DE1]/30"
                           }`}
                       >
                         <AvatarImage
@@ -241,7 +251,7 @@ export function AnimatedTestimonials({
           </motion.div>
 
           {/* Right side: Testimonial cards */}
-          <motion.div variants={itemVariants} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative w-full min-h-[380px] sm:min-h-[400px] ">
+          <motion.div variants={itemVariants} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative w-full min-h-[300px] sm:min-h-[350px] ">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
@@ -267,26 +277,8 @@ export function AnimatedTestimonials({
                   <div className="relative mb-6 flex-1 overflow-y-auto pr-2 custom-scrollbar">
                     {/* <Quote className="absolute -top-2 -left-2 h-8 w-8 text-primary/20 rotate-180" /> */}
                     <div className="relative z-10 text-sm text-[#818181] leading-relaxed">
-                      <p>"{getDisplayContent(testimonial.content, index)}"</p>
+                      <p>"{testimonial.content}"</p>
 
-                      {testimonial.content.length > MAX_LENGTH && (
-                        <motion.button
-                          onClick={() =>
-                            setExpanded(expanded === index ? null : index)
-                          }
-                          whileHover={{ x: 4 }}
-                          transition={{ duration: 0.2 }}
-                          className="mt-2 text-xs font-semibold text-black hover:underline flex items-center gap-1"
-                        >
-                          {expanded === index ? "Show less" : "Show more"}
-                          <motion.span
-                            animate={{ rotate: expanded === index ? 180 : 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                          >
-                            {expanded === index ? <ChevronUp /> : <ChevronDown />}
-                          </motion.span>
-                        </motion.button>
-                      )}
 
                     </div>
 
@@ -312,10 +304,7 @@ export function AnimatedTestimonials({
                 </div>
               </motion.div>
             ))}
-
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-xl bg-[#5E4DE1]/5"></div>
-            <div className="absolute -top-6 -right-6 h-24 w-24 rounded-xl bg-[#5E4DE1]/5"></div>
+         
           </motion.div>
         </motion.div>
 

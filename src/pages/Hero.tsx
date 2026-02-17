@@ -4,7 +4,6 @@ import BookDemo from "./components/BookNow"
 import { Dialog, DialogContent, DialogTrigger } from "../components/ui/dialog";
 import DotGrid from "./components/DotGrid";
 
-
 const Hero: React.FC = () => {
     return (
         <div className="relative w-full h-[90vh] lg:h-[110vh] overflow-hidden">
@@ -26,10 +25,13 @@ const Hero: React.FC = () => {
             <div className="relative z-20 w-full h-full">
 
                 <Header />
+
                 {/* Content Container */}
                 <div className="flex flex-col items-center mt-10 sm:mt-26">
                     {/* Hero Content */}
+
                     <div className="max-w-4xl text-center mb-12">
+
                         <h1 className="text-2xl sm:text-3xl lg:text-5xl text-black mb-8">
                             <span className="block drop-shadow-lg">
                                 Where <span className="text-[#543ED2] font-semibold">Education</span> Meets

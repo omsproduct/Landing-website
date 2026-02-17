@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PlusCircleFill, DashCircle } from "react-bootstrap-icons";
+import { ScrollReveal } from "./components/ScrollReveal";
 
 interface FAQItem {
   readonly id: number;
@@ -56,7 +57,7 @@ const Accordion = () => {
    <section className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-14 mt-16 sm:mt-24">
       
       <div className="absolute -top-20 right-5 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
-
+<ScrollReveal>
       <h2 className="text-3xl font-semibold text-center">It <span className="text-[#5E4DE1]">Helps...</span></h2>
       <div className="space-y-1">
         {faqItems.map((item) => {
@@ -123,6 +124,7 @@ const Accordion = () => {
           );
         })}
       </div>
+      </ScrollReveal>
     </section>
   );
 };

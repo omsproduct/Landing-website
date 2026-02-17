@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
       ">
 
           <NavLink
-            to="/pricing"
+            to={"/pricing"}
             className={({ isActive }) =>
               `px-2 py-1 transition-all duration-300 ${isActive
                 ? "text-[#5E4DE1] font-semibold"
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
           </NavLink>
 
           <NavLink
-            to="/information"
+            to={"/information"}
             className={({ isActive }) =>
               `px-2 py-1 transition-all duration-300 ${isActive
                 ? "text-[#5E4DE1] font-semibold"

@@ -1,6 +1,7 @@
 import { Button } from '../../../components/ui/button'
 import { Dialog, DialogContent, DialogTrigger } from '../../../components/ui/dialog';
 import BookDemo from '../../components/BookNow';
+import { ScrollReveal } from '../../components/ScrollReveal';
 
 interface AboutItem {
     readonly id: number;
@@ -31,81 +32,84 @@ const AboutData: readonly AboutItem[] = [
 ]
 const KnowOMS = () => {
     return (
-        <div className="z-20 min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24 lg:mb-30">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-8 sm:mb-10 md:mb-14 text-center flex items-center justify-center gap-2 flex-wrap">
-                <span>Know</span>
-                <img
-                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
-                    alt="logo"
-                    className="h-6 sm:h-8 md:h-10"
-                />
-            </h1>
-          
-            {/* Image Wrapper */}
-            <div className="relative w-full max-w-5xl mx-auto">
+        <section className="z-20 min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24 lg:mb-30">
+            <ScrollReveal>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-8 sm:mb-10 md:mb-14 text-center flex items-center justify-center gap-2 flex-wrap">
+                    <span>Know</span>
+                    <img
+                        src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
+                        alt="logo"
+                        className="h-6 sm:h-8 md:h-10"
+                    />
+                </h1>
 
-                {/* Image */}
-                <img
-                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770360468/Group_6357568_1_fdwjzj.svg"
-                    alt="OMS"
-                    className="w-full h-auto object-contain"
-                />
+                {/* Image Wrapper */}
+                <div className="relative w-full max-w-5xl mx-auto">
 
-                {/* Text Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center pt-2 sm:pt-4 md:pt-6 px-2 sm:px-4 text-center">
+                    {/* Image */}
+                    <img
+                        src="https://res.cloudinary.com/dflelt85r/image/upload/v1770360468/Group_6357568_1_fdwjzj.svg"
+                        alt="OMS"
+                        className="w-full h-auto object-contain"
+                    />
 
-                    <p className="max-w-sm sm:max-w-xl md:max-w-2xl text-black text-xs sm:text-sm md:text-base mb-4 font-medium">
-                        We are an education-focused technology company building operations-driven software for institutions.
-                        Our goal is to simplify management and support institutions through reliable and scalable digital solutions.
-                    </p>
+                    {/* Text Overlay */}
+                    <div className="absolute inset-0 flex flex-col items-center pt-2 sm:pt-4 md:pt-6 px-2 sm:px-4 text-center">
 
-                    <Dialog>
-                        <DialogTrigger asChild>
-                            <Button
-                                variant="shimmer"
-                                className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-sm"
-                            >
-                                Book Demo
-                            </Button>
-                        </DialogTrigger>
+                        <p className="max-w-sm sm:max-w-xl md:max-w-2xl text-black text-xs sm:text-sm md:text-base mb-4 font-medium">
+                            We are an education-focused technology company building operations-driven software for institutions.
+                            Our goal is to simplify management and support institutions through reliable and scalable digital solutions.
+                        </p>
 
-                        <DialogContent variant="form" className="px-4 sm:px-6">
-                            <BookDemo />
-                        </DialogContent>
-                    </Dialog>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button
+                                    variant="shimmer"
+                                    className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-sm"
+                                >
+                                    Book Demo
+                                </Button>
+                            </DialogTrigger>
 
-                </div>
-            </div>
+                            <DialogContent variant="form" className="px-4 sm:px-6">
+                                <BookDemo />
+                            </DialogContent>
+                        </Dialog>
 
-            <div className="w-full flex items-center justify-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10">
-                <img
-                    src="https://res.cloudinary.com/dflelt85r/image/upload/v1770189496/Vector_446_xdtyms.svg"
-                    alt="vector-446"
-                    className="h-auto sm:h-1/3 md:h-[60%] lg:h-full w-auto"
-                />
-            </div>
-
-
-            <div className='w-full mt-10 sm:mt-12 md:mt-14 mx-auto max-w-6xl'>
-                {AboutData.map((about) => (
-                    <div key={about.id} className='relative'>
-                        <div className="py-4 sm:py-5 px-4 sm:px-6">
-                            <h5 className="text-sm sm:text-base md:text-lg font-bold">
-                                {about.title}
-                            </h5>
-
-                            <p className="text-xs sm:text-sm md:text-base text-[#818181] font-medium mt-1 sm:mt-2">
-                                {about.description}
-                            </p>
-                        </div>
-                        {/* Divider - Only show if not the last item */}
-                        {about.id !== AboutData.length && (
-                            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
-                        )}
                     </div>
-                ))}
-            </div>
-        </div>
+                </div>
+
+                <div className="w-full flex items-center justify-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10">
+                    <img
+                        src="https://res.cloudinary.com/dflelt85r/image/upload/v1770189496/Vector_446_xdtyms.svg"
+                        alt="vector-446"
+                        className="h-auto sm:h-1/3 md:h-[60%] lg:h-full w-auto"
+                    />
+                </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+                <div className='w-full mt-10 sm:mt-12 md:mt-14 mx-auto max-w-6xl'>
+                    {AboutData.map((about) => (
+                        <div key={about.id} className='relative'>
+                            <div className="py-4 sm:py-5 px-4 sm:px-6">
+                                <h5 className="text-sm sm:text-base md:text-lg font-bold">
+                                    {about.title}
+                                </h5>
+
+                                <p className="text-xs sm:text-sm md:text-base text-[#818181] font-medium mt-1 sm:mt-2">
+                                    {about.description}
+                                </p>
+                            </div>
+                            {/* Divider - Only show if not the last item */}
+                            {about.id !== AboutData.length && (
+                                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-[#5E4DE1] to-transparent" />
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </ScrollReveal>
+        </section>
     )
 }
 

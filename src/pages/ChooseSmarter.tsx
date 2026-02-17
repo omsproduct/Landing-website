@@ -2,6 +2,7 @@ import { WindowSidebar, HandIndexThumb, GraphUp, Folder2Open, ChatSquareDots, Jo
 import { Button } from "../components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "../components/ui/dialog"
 import BookDemo from "./components/BookNow"
+import { ScrollReveal } from "./components/ScrollReveal"
 
 const USPDATA = [
     {
@@ -80,8 +81,8 @@ const USPDATA = [
 
 const ChooseSmarterExp = () => {
     return (
-       
-            <div className='relative mt-30 px-4 md:px-8 lg:px-16 xl:px-38'>
+            <section className='relative mt-30 px-4 md:px-8 lg:px-16 xl:px-38'>
+                    <ScrollReveal>
                 <div className="absolute top-[25%] left-0 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
                 {/* Heading */}
                 <div className="space-y-6 w-full max-w-114 mx-auto text-center">
@@ -166,7 +167,8 @@ const ChooseSmarterExp = () => {
                         </DialogContent>
                     </Dialog>
                 </div>
-            </div>
+            </ScrollReveal>
+            </section>
     )
 }
 

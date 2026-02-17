@@ -12,11 +12,11 @@ const Pricing = () => {
         <div className="absolute top-[1%] right-0 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
         <div className="absolute top-[65%] left-0 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
         {/* <div className="absolute top-[10%] left-[2%] w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" /> */}
-        <InputDetails/>
-        <TheChanges/>
-        <ChangesFor/>
+        <InputDetails />
+        <TheChanges />
+        <ChangesFor />
       </div>
-      <Footer/>
+      <Footer />
     </section>
   )
 }
