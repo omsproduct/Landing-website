@@ -1,22 +1,22 @@
-import Hero from './pages/Hero'
-import ChooseSmarter from './pages/ChooseSmarter'
-import YouGet from './pages/YouGet'
-import Feedback from './pages/Feedback'
 import Accordion from './pages/Accordion'
+import ChooseSmarter from './pages/ChooseSmarter'
+import Feedback from './pages/Feedback'
 import Footer from './pages/Footer'
-import Solution from './pages/Solution'
 import Gain from './pages/Gain'
-// import Get from './pages/get'
+import Get from './pages/Get'
+import Hero from './pages/Hero'
+import Solution from './pages/Solution'
+
+
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Solution/>
-      <Gain/>
+      <Solution />
+      <Gain />
       <ChooseSmarter />
-      {/* <Get/>  */}
-      <YouGet />
+      <Get />
       <Feedback />
       <Accordion />
       <Footer />

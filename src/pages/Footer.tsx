@@ -15,50 +15,54 @@ const socials: readonly SocialLink[] = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white mb-8 px-38 mt-40">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="relative w-full bg-white mt-16 sm:mt-24 lg:mt-32 px-4 sm:px-8 lg:px-16 py-10 sm:py-14">
+      <div className="absolute bottom-[0%] right-0 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
+      <div className="max-w-6xl mx-auto">
 
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 sm:gap-y-0">
 
           {/* Left: Logo + Socials */}
-          <div className="space-y-8 col-span-2">
-            <div className="flex items-center">
-              <img
-                src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
-                alt="OMS Logo"
-              />
-            </div>
+          <div className="space-y-8 col-span-2 flex flex-col items-center lg:items-start">
+            <img
+              src="https://res.cloudinary.com/dflelt85r/image/upload/v1770185805/Group_6357568_rcketl.svg"
+              alt="OMS Logo"
+              className="w-32 sm:w-36 lg:w-40 h-auto"
+            />
 
-            <div className="flex items-center gap-3">
+
+            <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
               {socials.map((social) => (
-                <button
+                <a
                   key={social.alt}
+                  href="#"
                   aria-label={social.alt}
                   className="
-                    w-9 h-9
-                    flex items-center justify-center
-                    rounded-full
-                    bg-gray-50
-                    text-[#1A202C]
-                    shadow-[2px_6px_10px_rgba(0,0,0,0.15)]
-                    transition
-                    cursor-pointer
-                    hover:scale-105
-                    hover:bg-white
-                    hover:shadow-[2px_6px_10px_rgba(84,62,210,0.5)]
-                  "
+        w-10 h-10 sm:w-9 sm:h-9  // Slightly larger on mobile
+        flex items-center justify-center
+        rounded-full
+        bg-gray-50
+        text-[#1A202C]
+        shadow-[2px_6px_10px_rgba(0,0,0,0.15)]
+        transition-all duration-300
+        cursor-pointer
+        hover:scale-105
+        hover:bg-white
+        hover:shadow-[2px_6px_10px_rgba(84,62,210,0.5)]
+        active:scale-95 // Add press effect on mobile
+      "
                 >
                   <img
                     src={social.src}
                     alt={social.alt}
-                    className="w-3 h-3 object-contain"
+                    className="w-3.5 h-3.5 sm:w-3 sm:h-3 object-contain"
+                    loading="lazy"
                   />
-                </button>
+                </a>
               ))}
             </div>
 
-        
+
 
             <p className="text-xs font-semibold text-[#7C7C7C]">
               © {new Date().getFullYear()} omslab.in, All rights reserved.
@@ -66,44 +70,45 @@ const Footer = () => {
           </div>
 
           {/* Middle: Access */}
-          <div>
-            <h3 className="text-[#5E4DE1] font-semibold mb-4">
-              Access
-            </h3>
-            <ul className="space-y-3 text-sm text-[#818181] font-medium">
-              <li className="cursor-pointer hover:text-gray-600">
-                Disclaimer
-              </li>
-              <li className="cursor-pointer hover:text-gray-600">
-                Privacy & Policy
-              </li>
-              <li className="cursor-pointer hover:text-gray-600">
-                Terms of uses
-              </li>
-            </ul>
-          </div>
+          <div className="col-span-2 flex justify-around">
+            <div className="">
+              <h3 className="text-[#5E4DE1] text-2xl font-medium mb-4">
+                Access
+              </h3>
+              <ul className="space-y-3 text-sm text-[#818181] font-medium">
+                <li className="cursor-pointer hover:text-gray-600">
+                  Disclaimer
+                </li>
+                <li className="cursor-pointer hover:text-gray-600">
+                  Privacy & Policy
+                </li>
+                <li className="cursor-pointer hover:text-gray-600">
+                  Terms of uses
+                </li>
+              </ul>
+            </div>
 
-          {/* Right: Contact */}
-          <div>
-            <h3 className="text-[#5E4DE1] font-semibold mb-4">
-              Contact
-            </h3>
-            <ul className="space-y-3.5 text-sm text-[#818181] font-medium">
-              <li className="space-y-1.25">
-                <span>Email</span>
-                <div className="text-gray-800">
-                  support@oms.org.in
-                </div>
-              </li>
-              <li className="space-y-1.25">
-                <span>Phone</span>
-                <div className="text-gray-800">
-                  +91 987654321
-                </div>
-              </li>
-            </ul>
+            {/* Right: Contact */}
+            <div>
+              <h3 className="text-[#5E4DE1] text-2xl font-medium mb-4">
+                Contact
+              </h3>
+              <ul className="space-y-3.5 text-sm text-[#818181] font-medium">
+                <li className="space-y-1.25">
+                  <span>Email</span>
+                  <div className="text-gray-800 text-xs">
+                    support@oms.org.in
+                  </div>
+                </li>
+                <li className="space-y-1.25">
+                  <span>Phone</span>
+                  <div className="text-gray-800 text-xs">
+                    +91 987654321
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-
         </div>
 
         {/* Bottom */}

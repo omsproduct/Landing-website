@@ -53,7 +53,9 @@ const Accordion = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 space-y-14 mt-30 ">
+   <section className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-14 mt-16 sm:mt-24">
+      
+      <div className="absolute -top-20 right-5 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
 
       <h2 className="text-3xl font-semibold text-center">It <span className="text-[#5E4DE1]">Helps...</span></h2>
       <div className="space-y-1">
@@ -67,7 +69,7 @@ const Accordion = () => {
                 onClick={() => toggleItem(item.id)}
                 aria-expanded={isExpanded}
               >
-                <h3 className="text-lg font-semibold text-[#5E4DE1]">
+                <h3 className="text-base sm:text-lg font-semibold text-[#5E4DE1]">
                   {item.question}
                 </h3>
 
@@ -121,7 +123,7 @@ const Accordion = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

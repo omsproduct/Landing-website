@@ -74,18 +74,13 @@ function DialogContent({
 
           // Default dialog (shadcn-like)
           !isForm &&
-            "grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg",
+          "grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg",
 
           // Form dialog (YOUR DESIGN)
           isForm &&
-            `
-              w-245
-              max-w-[calc(100%-2rem)]
-              bg-white
-              border-none
-              shadow-none
-              rounded-lg
-            `,
+          `
+          w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-white border-none shadow-none rounded-lg custom-scrollbar
+          `,
 
           className
         )}
