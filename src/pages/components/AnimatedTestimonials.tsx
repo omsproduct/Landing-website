@@ -177,7 +177,7 @@ export function AnimatedTestimonials({
           <motion.div variants={itemVariants} className="flex flex-col justify-center">
             <div className="space-y-6">
               {badgeText && (
-                <div className="relative inline-flex items-center rounded-full p-[2px] bg-[linear-gradient(270deg,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4,#FF3BD4)] bg-[length:300%_300%] animate-gradient">
+                <div className="relative inline-flex items-center rounded-full p-0.5 bg-[linear-gradient(270deg,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4,#FF3BD4)] bg-[length:300%_300%] animate-gradient">
 
                   <div className="inline-flex items-center px-3 py-1 rounded-full bg-white text-sm font-semibold">
 
@@ -251,7 +251,7 @@ export function AnimatedTestimonials({
           </motion.div>
 
           {/* Right side: Testimonial cards */}
-          <motion.div variants={itemVariants} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative w-full min-h-[300px] sm:min-h-[350px] ">
+          <motion.div variants={itemVariants} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative w-full min-h-[420px] sm:min-h-[350px] ">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
@@ -278,8 +278,6 @@ export function AnimatedTestimonials({
                     {/* <Quote className="absolute -top-2 -left-2 h-8 w-8 text-primary/20 rotate-180" /> */}
                     <div className="relative z-10 text-sm text-[#818181] leading-relaxed">
                       <p>"{testimonial.content}"</p>
-
-
                     </div>
 
                   </div>
