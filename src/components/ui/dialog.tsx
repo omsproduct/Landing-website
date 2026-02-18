@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Dialog as DialogPrimitive } from "radix-ui"
+import { XIcon } from "lucide-react"
 
 import { cn } from "../../lib/utils"
 import { Button } from "./button"
@@ -94,10 +95,11 @@ function DialogContent({
               "absolute z-50 opacity-60 hover:opacity-100 transition-opacity",
 
               isForm
-                ? "top-6 right-6 text-black"
+                ? "top-6 right-2 text-black"
                 : "top-4 right-4 text-muted-foreground"
             )}
           >
+            <XIcon className="h-4 w-4 block sm:hidden" />
             <span className="sr-only">Close</span>
           </DialogPrimitive.Close>
         )}
