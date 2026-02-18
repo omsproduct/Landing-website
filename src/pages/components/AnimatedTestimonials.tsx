@@ -265,7 +265,7 @@ export function AnimatedTestimonials({
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 style={{ zIndex: activeIndex === index ? 10 : 0 }}
               >
-                <div className="bg-card border-2 border-[#5E4DE1] shadow-lg rounded-[50px] p-8 h-full flex flex-col overflow-hidden">
+                <div className="bg-card border-2 border-[#5E4DE1] shadow-lg rounded-3xl sm:rounded-[50px] p-8 h-full flex flex-col overflow-hidden">
                   <div className="mb-6 flex items-center gap-2">
                     {renderStars(testimonial.rating)}&nbsp;
                     <span className="text-sm font-semibold text-[#543ED2]">

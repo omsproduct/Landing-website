@@ -54,76 +54,76 @@ const Accordion = () => {
   };
 
   return (
-   <section className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-14 mt-16 sm:mt-24">
-      
+    <section className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-14 mt-16 sm:mt-24">
+
       <div className="absolute -top-20 right-5 w-[30vh] h-[30vh] bg-[linear-gradient(to_bottom_right,#FF3BD4,#FFB5EF,#FE98E8,#FFEDA4)] rounded-full blur-3xl opacity-20" />
-<ScrollReveal>
-      <h2 className="text-3xl font-semibold text-center">It <span className="text-[#5E4DE1]">Helps...</span></h2>
-      <div className="space-y-1">
-        {faqItems.map((item) => {
-          const isExpanded = expandedId === item.id;
+      <ScrollReveal>
+        <h2 className="text-3xl font-semibold text-center mb-8 sm:mb-10 md:mb-14">It <span className="text-[#5E4DE1]">Helps...</span></h2>
+        <div className="space-y-1">
+          {faqItems.map((item) => {
+            const isExpanded = expandedId === item.id;
 
-          return (
-            <div key={item.id} className="py-5 px-6 border-b border-black pb-4">
-              <button
-                className="flex w-full items-center justify-between text-left cursor-pointer"
-                onClick={() => toggleItem(item.id)}
-                aria-expanded={isExpanded}
-              >
-                <h3 className="text-base sm:text-lg font-semibold text-[#5E4DE1]">
-                  {item.question}
-                </h3>
+            return (
+              <div key={item.id} className="py-5 px-6 border-b border-black pb-4">
+                <button
+                  className="flex w-full items-center justify-between text-left cursor-pointer"
+                  onClick={() => toggleItem(item.id)}
+                  aria-expanded={isExpanded}
+                >
+                  <h3 className="text-base sm:text-lg font-semibold text-[#5E4DE1]">
+                    {item.question}
+                  </h3>
 
-                <span className="ml-6 shrink-0 relative w-5 h-5">
-                  {/* Plus Icon */}
-                  <PlusCircleFill
-                    className={`
+                  <span className="ml-6 shrink-0 relative w-5 h-5">
+                    {/* Plus Icon */}
+                    <PlusCircleFill
+                      className={`
                       absolute inset-0 h-5 w-5 text-[#5E4DE1]
                       transition-all duration-300 ease-in-out
                       ${isExpanded
-                        ? "rotate-90 opacity-0 scale-75"
-                        : "rotate-0 opacity-100 scale-100"}
+                          ? "rotate-90 opacity-0 scale-75"
+                          : "rotate-0 opacity-100 scale-100"}
                 `}
-                  />
+                    />
 
-                  {/* Minus Icon */}
-                  <DashCircle
-                    className={`
+                    {/* Minus Icon */}
+                    <DashCircle
+                      className={`
                       absolute inset-0 h-5 w-5 text-[#5E4DE1]
                       transition-all duration-300 ease-in-out
                       ${isExpanded
-                        ? "rotate-0 opacity-100 scale-100"
-                        : "-rotate-90 opacity-0 scale-75"}
+                          ? "rotate-0 opacity-100 scale-100"
+                          : "-rotate-90 opacity-0 scale-75"}
                 `}
-                  />
-                </span>
+                    />
+                  </span>
 
-              </button>
+                </button>
 
-              <div
-                className={`
+                <div
+                  className={`
                   mt-2
                   grid
                   transition-[grid-template-rows,opacity,transform]
                   duration-500
                   ease-in-out
                   ${isExpanded
-                    ? "grid-rows-[1fr] opacity-100 translate-y-0"
-                    : "grid-rows-[0fr] opacity-0 -translate-y-1"
-                  }
+                      ? "grid-rows-[1fr] opacity-100 translate-y-0"
+                      : "grid-rows-[0fr] opacity-0 -translate-y-1"
+                    }
                 `}
-              >
-                <div className="overflow-hidden">
-                  <p className="text-[#353535] text-base font-medium">
-                    {item.answer}
-                  </p>
+                >
+                  <div className="overflow-hidden">
+                    <p className="text-[#353535] text-base font-medium">
+                      {item.answer}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-            </div>
-          );
-        })}
-      </div>
+              </div>
+            );
+          })}
+        </div>
       </ScrollReveal>
     </section>
   );
